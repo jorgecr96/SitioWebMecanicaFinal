@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<meta charset="utf8">
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".button-collapse").sideNav();
+    });            
+</script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<!--contenedores para menus desplegables-->
+<ul id="slide-out" class="side-nav">
+    <li><a href="alta_noticias.php">NOTICIAS</a></li>
+    <li><a href="reticula_admin.php">RETÍCULAS</a></li>
+    <li><a href="prueba_admin.php">PROFESORES</a></li>
+    <li><a href="admin_especialidad.php">ESPECIALIDADES</a></li>
+    <li><a href="alta_material.php">MATERIAL DE APOYO</a></li>
+    <li><a href="indices_admin.php">ÍNDICES</a></li>
+</ul>
+<!--encabezado y menus-->
+<nav>
+    <div class="nav-wrapper grey darken-1">
+        <a href="#" data-activates="slide-out" class="button-collapse hide-on-large-only left"><i class="material-icons">menu</i></a>
+        <a href="#" class="brand-logo center"><h5>Metal Mecánica</h5></a>
+    </div>
+</nav>
+<nav class="hide-on-med-and-down">
+    <div class="nav-wrapper grey darken-1 center-align">
+        <ul class="center hide-on-med-and-down">
+            <li><a href="alta_noticias.php">NOTICIAS</a></li>
+            <li><a href="reticula_admin.php">RETÍCULAS</a></li>
+            <li><a href="prueba_admin.php">PROFESORES</a></li>
+            <li><a href="admin_especialidad.php">ESPECIALIDADES</a></li>
+            <li><a href="alta_material.php">MATERIAL DE APOYO</a></li>
+            <li><a href="indices_admin.php">INDICES</a></li>
+        </ul>
+    </div>
+</nav>

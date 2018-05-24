@@ -1,0 +1,1342 @@
+/*CSS DE MENU*/
+* {
+    padding: 0px;
+    margin:0px;
+}
+/*centrar menu y ancho tipo de letra*/
+#header{
+
+     background: #000; 
+  width: 1500px;
+    font-family: sans-serif;
+    font-size:14px;
+    position: fixed;
+    
+/*  border-top : 2px  solid  black ;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+*/    
+
+}
+
+
+/*centrar menu y ancho tipo de letra*/
+.titulo_carrera{
+
+     background: #000; 
+    width: 100px;
+    font-family: sans-serif;
+    font-size:16px;
+    color: #3DD5C4;
+    font-weight: bold;
+    position: fixed;
+    margin-top: 2%;
+    text-align:center;
+
+    
+/*  border-top : 2px  solid  black ;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+*/    
+
+}
+
+/*Sitios de inter�s*/
+.sitios_interes2{
+
+
+    margin-top: 5%;
+    
+    font-size: 60px;
+    color:#6c132b;
+    font-weight: bold;
+  
+     text-decoration:none; 
+
+    
+/*  border-top : 2px  solid  black ;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+*/    
+
+}
+
+
+/* centrar texto verticalmente */
+.centratexto{
+
+  text-align:center;
+  line-height:5em;
+
+}
+
+
+
+/*Es para las listas sin estilo*/
+
+ul,ol {
+
+    list-style: none;
+  
+}
+/* estilo menu pricipal
+quita subrayado  textdecoration*/
+.nav li a{
+        
+    background: #000; 
+    text-decoration:none;
+    color:#000/* #fff*/;
+    text-decoration:none;
+    padding: 5px 25px;
+    font-weight: bold;
+    display: block;
+
+    
+
+}
+/*pone sombra al pasar raton      text-shadow: 0 0 2px #000;*/
+.nav li a:hover{
+    background-color:#3DD5C4;
+      
+
+    
+
+}
+
+/*menu principal lo acomoda a la izquierda*/
+.nav >li{
+    float:left;
+}
+
+/*desaparece submenus
+
+tama�o conforme al menu- absolute */
+
+.nav li ul{
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+
+/*hacer aparecer menu por medio de la sombra*/
+
+.nav li:hover >ul{
+    display:block;
+}
+
+/*Es para  sbmenus paara poner menu alado*/
+.nav li ul li {
+    position: relative;
+
+}.nav li ul li ul{
+    right: -140px;
+    top: 0px;
+
+}
+
+
+/*FIN DE MENU*/
+
+/*INDEX*/
+
+.Cprincipal_index{
+    width:90%;
+    height:100%;
+    margin-top: 5%;
+    margin-left: 5%;  
+    border-bottom: solid iem*
+ }
+ .panelcentral{
+    width:90%;
+    height:100%;
+    margin-top: 5%;
+    margin-left: 5%;  
+    border-bottom: solid iem*
+ }
+/*FIN DE INDEX*/
+
+/* ASPIRANTE EGRESADO y Organigrama*/
+ .Cprincipal_aspirante{
+    width:90%;
+    height:1500px;
+    background-image: url(Imagenes/fondo1.png);
+    margin-left: 5%;
+    margin-top: 2%;
+}
+ .Cprincipal_egresado{
+    width:90%;
+    height:1500px;
+    background-image: url(Imagenes/fondo1.png);
+    margin-left: 5%;
+    margin-top: 2%;
+
+}
+.Cprincipal_organ{
+    width:1300px;
+    height:1100px;
+    background-image: url(Imagenes/fondo1.png);
+    margin-left: 2%;
+    margin-top: 2%;
+
+}
+ 
+.letrata{
+font-family: sans-serif;
+    font-size: 20px;
+    color:#6c132b;
+    font-weight: bold;
+  
+     text-decoration:none; 
+ 	}
+/*FIN DE ASPIRANTE*/
+
+
+.letrab{
+font-family: sans-serif;
+    font-size: 30px;
+    color:#6c132b;
+    font-weight: bold;
+  
+     text-decoration:none; 
+ 	}
+
+
+.Ctextoa{
+    width:80%;
+    height:600px;
+    margin-left: 9%;
+   }
+   
+/* MISION*/
+ .Cprincipal_mision{
+    width:90%;
+    height:800px;
+    background-image: url(Imagenes/fondo1.png);
+    margin-left: 5%;
+    margin-top: 2%;
+
+}
+
+ .Creticula{
+    width:90%;
+    height:1500px;
+    background-image: url(Imagenes/fondo1.png);
+    margin-left: 5%;
+    margin-top: 2%;
+
+}
+
+
+
+.Ctexto{
+    width:80%;
+    height:600px;
+    margin-left: 9%;
+   }
+
+.letram{
+font-family: sans-serif;
+    font-size: 16px;
+    color:  #000;
+    justify-content: 
+    text-decoration:none; 
+}
+
+.letrat{
+font-family: sans-serif;
+    font-size: 20px;
+    color:#6c132b;
+    font-weight: bold;
+  
+     text-decoration:none; 
+}
+
+
+/*FIN DE MISION*/
+
+ 
+.Cprincipal_reticula{
+    float:left;
+    
+    width:75%;
+    height:600px;
+   
+    margin-left: 1%;
+   
+    
+ }
+ .Espe{
+    float: left;
+    width:23%;
+    height:885px;
+    margin-left:5px; 
+  
+   
+   
+    
+ }
+  .numero{
+    float: left;
+    margin-left: 10%
+    margin-top: 5px;
+    width:100%;
+    height:30px;
+    background-image: url(Imagenes/fondo1.png);
+   
+    border: solid 0.1em black;
+    border-bottom: solid iem*;
+    
+ }
+
+ .Espe2{
+    float: left;
+    margin-top: 30px;
+    width:90%;
+    height:150px;
+    background-image: url(Imagenes/fondo1.png);
+   margin-left: 4%;
+    border: solid 0.1em black;
+    border-bottom: solid iem*;
+    
+ }
+  .Espe3{
+    float: left;
+    margin-top: 30px;
+    width:90%;
+    height:150px;
+    background-color: white;
+   
+   margin-left: 4%;
+    border: solid 0.1em black;
+    border-bottom: solid iem*
+    
+    
+ }
+  .Espe4{
+    float: left;
+    margin-top: 330px;
+    width:90%;
+    height:150px;
+background-color: white;
+   margin-left: 4%;
+    border: solid 0.1em black;
+    border-bottom: solid iem*;
+   
+    
+ }
+
+.cajaS{
+    
+    width: 345px;
+    height: 100px;
+    margin-left: 3%;	
+    margin-top: 2%;
+    float: left;
+
+}
+
+.cajaL{
+    
+    width: 150px;
+    height: 150px;
+    margin-left: 8%;
+    float: left;
+}
+.cajaT{
+    
+    width: 400px;
+    height: 100px;
+
+  /*  margin-right: 1%; */
+    margin-bottom: 3%;
+    margin-top: 1%;
+    float: right;
+}
+.cajaT1{
+    
+    width: 400px;
+    height: 100px;
+
+    margin-left: 40%;
+    margin-bottom: 3%;
+    float: left;
+}
+
+.cajaC{
+    
+    width: 400px;
+    height: 100px;
+
+    margin-left: 40%;
+    margin-bottom: 3%;
+    float: left;
+}
+
+.Tletra_reticula{
+    font-family: sans-serif;
+    font-size: 10px;
+    color:blue;
+    font-weight:bold;
+    text-decoration:none;
+    background-color: white;
+
+}
+.Tletra_reticula1{
+    font-family: sans-serif;
+    font-size: 10px;
+    color:blue;
+    font-weight:bold;
+    text-decoration:none;
+    background-color: yellow;
+    position: absolute;
+
+}
+#Lreti{
+    font-family: sans-serif;
+    font-size: 12px;
+    color:#000;
+    
+    text-decoration:none;
+   
+
+}
+
+
+/*Carrucel css*/
+
+
+.slider{
+    margin-left:200px;
+    width: 55%;
+    overflow: hidden;
+     border: solid 3em black;
+    border-bottom: solid iem*   
+}
+
+.slider ul{
+    padding: 0;
+    display:flex;
+    width: 100%;
+    animation: cambio 20s infinite alternate;
+}
+
+.slider li{
+    list-style: none;
+    width: 100%;
+}
+
+
+@keyframes cambio{
+    0% {margin-left: 0; }
+    20% {margin-left: 0;}
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    58% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
+
+/*termino de carrucel*/
+
+/*Inicio de Pie de Pagina*/
+
+
+.Cpie_index{
+
+margin-left: 5%;
+    background-image: url(Imagenes/azul.jpg);
+    width:90%;
+    height:260px;
+     border: solid 0.1em black;
+    border-bottom: solid iem*
+}
+.Cpie_index1{
+
+margin-left: 1%;
+    background-image: url(Imagenes/azul.jpg);
+    width:98%;
+    height:240px;
+     border: solid 0.1em black;
+    border-bottom: solid iem*
+}
+
+.Cpie_index2{
+
+margin-left: 2%;
+    background-image: url(Imagenes/azul.jpg);
+    width:96%;
+    height:240px;
+     border: solid 0.1em black;
+    border-bottom: solid iem*
+}
+
+.CSocial{
+    margin-top:10px; 
+    margin-left: 60px;
+    float: left;
+width: 25%;
+height: 200px;
+
+
+
+}
+
+.CSocial2{
+    margin-top:px; 
+    margin-left: 70px;
+  
+    float: left;
+width: 40%;
+height: 50px;
+
+
+
+}
+
+.CVinculo{
+ margin-top:10px; 
+float: left; 
+ margin-left: 85px;
+width: 25%;
+height: 200px;
+
+
+}
+
+.CContactar{
+margin-top:10px; 
+float: left; 
+margin-left: 85px;
+width: 25%;
+height: 200px;
+
+
+}
+
+.letra_pie{
+
+    font-family: sans-serif;
+    font-size: 12px;
+    color:  #FFD700;
+     font-weight:bold;
+
+}
+
+.titulos_pie{
+     font-family: sans-serif;
+    font-size: 18px;
+    color:  white;
+     font-weight:bold;
+
+}
+
+#link{
+     font-family: sans-serif;
+    font-size: 12px;
+    color:  #FFD700;
+     font-weight:bold;
+     text-decoration:none; 
+
+}
+#link2{
+     font-family: sans-serif;
+    font-size: 12px;
+    color: white;
+     font-weight:bold;
+     text-decoration:none; 
+
+}
+#link3{
+     font-family: sans-serif;
+    font-size: 12px;
+    color: black;
+     font-weight:bold;
+     text-decoration:none; 
+
+}
+
+/*Comienzo de Reticula*/
+.caja_mision1{
+    float: left;
+
+    width: 1000px;
+    height: 950px;
+    border: solid 0.1em blue;
+    border-bottom: solid 0.1em;
+            }
+.caja_misionr{
+   
+ float:left;
+margin-left: 70px;
+    width:10%;
+    height:100px;
+    border: solid 0.1em black;
+    border-bottom: solid iem*
+            }
+            .caja_misione1{
+   
+ float:left;
+ margin-left: 70px;
+ 
+    width:10%;
+    height:100px;
+    border: solid 0.1em black;
+    border-bottom: solid iem*
+            }
+            .caja_misione2{
+   
+ float:left;
+ 
+    width:10%;
+    height:100px;
+    border: solid 0.1em black;
+    border-bottom: solid iem*
+            }
+
+
+
+/*comienzo de combo*/
+.docu{
+    width:200px;
+    height:30px;
+    float:left;
+    
+
+}
+
+.docu1{
+    width:200px;
+    height:30px;
+    float:left;
+
+   
+}
+.docu2{
+    width:200px;
+    height:30px;
+    float:left;
+  
+}
+.docu3{
+    width:120px;
+    height:30px;
+    float:left;
+ margin-top: 18px;
+
+  
+}
+.docu4{
+    width:120px;
+    height:30px;
+    float:left;
+
+     
+
+  
+}
+.combo{
+    width:100px;
+    float:left;
+    top:5px;
+
+}
+
+            
+.lcombo1{
+
+font-family: sans-serif;
+    font-size: 25px;
+    color:#6c132b;
+    font-weight: bold;
+  
+     text-decoration:none; 
+
+}
+.lcombo2{
+
+font-family: sans-serif;
+    font-size: 25px;
+    color:#6c132b;
+    font-weight: bold;
+  
+     text-decoration:none; 
+
+}.lcombo3{
+
+font-family: sans-serif;
+    font-size: 30px;
+    color:#6c132b;
+    font-weight: bold;
+  
+     text-decoration:none; 
+
+}
+
+
+ .numero1{
+    float: left;
+    margin-left: 10%;
+    margin-top: 10px;
+    width:350PX;
+    height:300px;
+    border-top : 2px  dashed  gray ;
+  border-bottom: 2px dashed gray;
+
+  border-left: 2px dashed gray;
+
+   
+    
+ }
+ .numero2{
+    float: left;
+
+    margin-top:10px;
+    width:350PX;
+    height:300px;
+  border-top : 2px  dashed  gray ;
+  border-bottom: 2px dashed gray;
+  border-right: 2px dashed gray;
+  border-left: 2px dashed gray;
+    
+ }
+
+  .Cprincipal_material{
+    width:90%;
+    height:600px;
+    background-image: url(Imagenes/fondo1.png);
+    margin-left: 5%;
+    margin-top: 2%;
+
+}
+
+
+
+/*menu principal*/
+
+.navbar-collapse {
+  max-height: 340px;
+  padding-right: 15px;
+  padding-left: 15px;
+  overflow-x: visible;
+  -webkit-overflow-scrolling: touch;
+  border-top: 1px solid transparent;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+}
+.navbar-collapse.in {
+  overflow-y: auto;
+}
+@media (min-width: 768px) {
+  .navbar-collapse {
+    width: auto;
+    border-top: 0;
+    box-shadow: none;
+  }
+  .navbar-collapse.collapse {
+    display: block !important;
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+  }
+  .navbar-collapse.in {
+    overflow-y: visible;
+  }
+  .navbar-fixed-top .navbar-collapse,
+  .navbar-static-top .navbar-collapse,
+  .navbar-fixed-bottom .navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+.container > .navbar-header,
+.container-fluid > .navbar-header,
+.container > .navbar-collapse,
+.container-fluid > .navbar-collapse {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+@media (min-width: 768px) {
+  .container > .navbar-header,
+  .container-fluid > .navbar-header,
+  .container > .navbar-collapse,
+  .container-fluid > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+
+
+/*  CURRICULUMS ORGANIGRAMA*/
+Organigrama{
+    position: relative;
+    width: 100%;
+}
+
+/*tipo de fuente sobre el nombre que se despliega*/
+#Organigrama >a{
+ /*   position: absolute;
+   border: solid 3px black;
+    border-radius: 15px;
+    background-color: #efefef;
+    display: none;
+
+    font-size: 14px;
+    font-family: Georgia, Times, serif;
+
+    vertical-align: middle;
+
+    color: transparent;
+    text-align: center;
+
+	
+    z-index: 1001;
+    */
+    
+    color: transparent;
+    position: absolute;
+    width: 15%;
+    height: 15%;
+    z-index: 1001;
+}
+
+/* caja de texto que se despliega con el cursor */
+/*
+  #Organigrama>a:hover{
+  background-color: #efefef;
+  border: solid 3px #afe3c4;
+  border-radius: 5px;
+  color: black;
+
+
+
+}
+*/
+Organigrama2{
+    position: absolute;
+    width: 100%;
+}
+
+/*tipo de fuente sobre el nombre que se despliega*/
+#Organigrama2 >a{
+  /*position: absolute;
+  border: solid 3px black;
+    border-radius: 15px;
+    background-color: #efefef;
+    display: none;
+
+    font-size: 14px;
+    font-family: Georgia, Times, serif;
+
+    vertical-align: middle;
+
+    color: transparent;
+    text-align: center;
+
+	
+    z-index: 1001;*/
+    color: transparent;
+    
+    position: absolute;
+    width: 8.4%;
+    height: 7.8%;
+    z-index: 1001;
+}
+
+
+/* imagen que se despliega con el cursor */
+/*
+#Organigrama2>a:hover{  */
+/*  background-color: #efefef;
+  border: solid 3px #afe3c4;
+  border-radius: 5px;
+  color: black;
+*/
+/*  background: url(Imagenes/CV.png)  no-repeat;
+  background-position: RIGHT;
+
+}
+*/
+
+#Jefatura{
+    width: 18.7%;
+    height: 3.3%;
+    
+    font-size: 12px;
+    
+    left: 530px;
+    top: 300px;
+    
+}
+
+#Presidencia_Academica{
+    width: 15.5%;
+    height: 3.3%;
+    
+    font-size: 12px;
+    
+    left: 280px;
+    top: 470px;
+}
+
+#Secretario_Academico{
+    width: 15.5%;
+    height: 3.3%;
+    
+    font-size: 12px;
+    
+    left: 550px;
+    top: 540px;
+}
+
+#Docencia{
+    width: 15.5%;
+    height: 3.3%;
+    
+    font-size: 12px;
+    
+    left: 70px;
+    top: 700px;
+}
+
+#Vinculacion{
+    width: 15.5%;
+    height: 3.3%;
+    
+    font-size: 12px;
+    
+    left: 290px;
+    top: 700px;
+}
+
+#Investigacion{
+     width: 15.5%;
+    height: 3.3%;
+    
+    font-size: 12px;
+    
+    left: 520px;
+    top: 700px;
+}
+
+
+
+#Docente_1{
+    width: 10%;
+    height: 8%;
+    
+    font-size: 12px;
+ 
+
+    right: 385px;
+    top: 440px;
+}
+
+#Docente_2{
+    width: 10%;
+    height: 8%;    
+    font-size: 12px;
+    
+    right: 165px;
+    top: 440px;
+}
+
+#Docente_3{
+    width: 10%;
+    height: 8%;
+
+    font-size: 12px;
+    
+    right: 385px;
+    top: 510px;
+}
+
+#Docente_4{
+    width: 10%;
+    height: 8%;
+    
+    font-size: 12px;
+    
+    right: 165px;
+    top: 510px;
+}
+
+#Docente_5{
+    width: 10%;
+        height: 8%;
+    
+    font-size: 12px;
+    
+    right: 385px;
+    top: 570px;
+}
+
+#Docente_6{
+    width: 10%;
+        height: 8%;
+    
+    font-size: 12px;
+    
+    right: 165px;
+    top: 570px;
+}
+
+#Docente_7{
+    width: 10%;
+        height: 8%;
+    
+    font-size: 12px;
+    
+    right: 385px;
+    top:640px;
+}
+
+#Docente_8{
+    width: 10%;
+        height: 8%;
+    
+    font-size: 12px;
+    
+    right: 165px;
+    top: 640px;
+}
+
+#Docente_9{
+    width: 10%;
+        height: 8%;
+    
+    font-size: 12px;
+    
+    right: 385px;
+    top: 705px;
+}
+
+#Docente_21{
+    width: 10%;
+        height: 8%;
+    
+    font-size: 12px;
+    
+    right: 165px;
+    top: 705px;
+}
+
+#Docente_11{
+    width: 10%;
+        height: 8%;
+    
+    font-size: 12px;
+    
+    right: 385px;
+    top: 770px;
+}
+
+#Docente_12{
+    width: 10%;
+        height: 8%;
+    
+    font-size: 12px;
+    
+    right: 165px;
+    top: 770px;
+}
+
+#Docente_13{
+    width: 10%;
+        height: 8%;
+    
+    font-size: 12px;
+    
+    right: 385px;
+    top: 840px;
+}
+
+#Docente_14{
+    width: 10%;
+        height: 8%;
+    
+    font-size: 12px;
+    
+    right: 165px;
+    top: 840px;
+}
+
+#Docente_15{
+    width: 10%;
+        height: 8%;
+    
+    font-size: 12px;
+    
+    right: 385px;
+    top: 900px;
+}
+
+#Docente_16{
+    width: 10%;
+        height: 8%;
+    
+    font-size: 12px;
+    
+    right: 165px;
+    top: 900px;
+}
+
+#Docente_17{
+    width: 10%;
+        height: 8%;
+    
+    font-size: 12px;
+    
+    right: 385px;
+    top: 970px;
+}
+
+#Docente_18{
+    width: 10%;
+        height: 8%;
+    
+    font-size: 12px;
+    
+    right: 165px;
+    top: 970px;
+}
+
+#Docente_19{
+    width: 10%;
+        height: 8%;
+    
+    font-size: 12px;
+    
+    right: 385px;
+    top: 1040px;
+}
+
+#Docente_22{
+    width: 10%;
+        height: 8%;
+    
+    font-size: 12px;
+    
+    right: 165px;
+    top: 1040px;
+}
+
+
+
+/* ubicaci�n de una materia de la ret�cula */
+#ModFin{
+    right: 360px;
+    top: 580px;
+}
+
+/*
+#Docente_23{
+    width: 10%;
+    height: 12%;
+    
+    font-size: 12px;
+    
+    right: 32.8%;
+    top: 61.4%;
+}
+*/
+
+/*MEDIDAS SIN IMAGEN
+#Docente_1{
+    width: 10%;
+    height: 12%;
+    
+    font-size: 12px;
+ 
+
+    right: 32.8%;
+    top: 72.4%;
+}
+
+#Docente_2{
+    width: 3.5%;
+    height: 8.9%;
+    
+    font-size: 12px;
+    
+    right: 17.4%;
+    top: 73.4%;
+}
+
+#Docente_3{
+    width: 3.5%;
+    height: 8.9%;
+    
+    font-size: 12px;
+    
+    right: 33.2%;
+    top: 84.5%;
+}
+
+#Docente_4{
+    width: 3.5%;
+    height: 8.9%;
+    
+    font-size: 12px;
+    
+    right: 17.4%;
+    top: 84.5%;
+}
+
+#Docente_5{
+    width: 3.5%;
+    height: 8.9%;
+    
+    font-size: 12px;
+    
+    right: 33.2%;
+    top: 95.8%;
+}
+
+#Docente_6{
+    width: 3.5%;
+    height: 8.9%;
+    
+    font-size: 12px;
+    
+    right: 17.4%;
+    top: 95.8%;
+}
+
+#Docente_7{
+    width: 3.5%;
+    height: 8.9%;
+    
+    font-size: 12px;
+    
+    right: 33.2%;
+    top: 107%;
+}
+
+#Docente_8{
+    width: 3.5%;
+    height: 8.9%;
+    
+    font-size: 12px;
+    
+    right: 17.4%;
+    top: 107%;
+}
+
+#Docente_9{
+    width: 3.5%;
+    height: 8.9%;
+    
+    font-size: 12px;
+    
+    right: 33.2%;
+    top: 118.3%;
+}
+
+#Docente_20{
+    width: 3.5%;
+    height: 8.9%;
+    
+    font-size: 12px;
+    
+    right: 17.4%;
+    top: 118.3%;
+}
+
+#Docente_11{
+    width: 3.5%;
+    height: 8.9%;
+    
+    font-size: 12px;
+    
+    right: 33.2%;
+    top: 129.5%;
+}
+
+#Docente_12{
+    width: 3.5%;
+    height: 8.9%;
+    
+    font-size: 12px;
+    
+    right: 17.4%;
+    top: 129.5%;
+}
+
+#Docente_13{
+    width: 3.5%;
+    height: 8.9%;
+    
+    font-size: 12px;
+    
+    right: 33.2%;
+    top: 140.7%;
+}
+
+#Docente_14{
+    width: 3.5%;
+    height: 8.9%;
+    
+    font-size: 12px;
+    
+    right: 17.4%;
+    top: 140.7%;
+}
+
+#Docente_15{
+    width: 3.5%;
+    height: 8.9%;
+    
+    font-size: 12px;
+    
+    right: 33.2%;
+    top: 151.9%;
+}
+
+#Docente_16{
+    width: 3.5%;
+    height: 8.9%;
+    
+    font-size: 12px;
+    
+    right: 17.4%;
+    top: 151.9%;
+}
+
+#Docente_17{
+    width: 3.5%;
+    height: 8.9%;
+    
+    font-size: 12px;
+    
+    right: 33.2%;
+    top: 163.1%;
+}
+
+#Docente_18{
+    width: 3.5%;
+    height: 8.9%;
+    
+    font-size: 12px;
+    
+    right: 17.4%;
+    top: 163.1%;
+}
+
+#Docente_19{
+    width: 3.5%;
+    height: 8.9%;
+    
+    font-size: 12px;
+    
+    right: 33.2%;
+    top: 174.3%;
+}
+
+
+*/

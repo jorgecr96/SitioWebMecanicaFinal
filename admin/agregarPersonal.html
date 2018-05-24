@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <!-- Materialized libraries -->
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="icon" href="img/icon.png"/>
+        <!--Import jQuery before materialize.js-->
+        <!-- Compiled and minified JavaScript -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script type="text/javascript" src="/SitioWebMecanica/js/agregarPersonal.js"/></script>
+        
+    </head>
+    <body>
+            <h1>Agregar personal</h1>
+              
+                  <form action="upload.php" method="post" enctype="multipart/form-data">
+                      <input type="text" name= "nombreprofesor" id="nombreprofesor" placeholder="Nombre del profesor">
+                      <div class="input-field col s12">
+                        <select>
+                          <option value="Profesor">Profesor</option>
+                          <option value="Jefe de departamento">Jefe de departamento</option>
+                          <option value="3">Presidente de academia</option>
+                          <option value="3">Secretario de academia</option>
+                          <option value="3">coordinador de carrera</option>
+                          <option value="3">coordinador de programa de tutorias</option>
+                          <option value="3">Jefe de proyecto de docencia</option>
+                          <option value="3">Jefe de proyecto de vinculaci&oacuten</option>
+                          <option value="3">Jefe de proyecto de investigaci&oacuten</option>
+                        </select>
+                        <label>Puesto</label>
+                      </div>
+              
+                      <label for="archivo">Seleccione un archivo para subir</label>  
+                      <br>
+                      <input type="file" name="fileToUpload" id="fileToUpload">
+                  </form>
+              
+              
+                </div>
+        
+    </body>
+    
+</html>

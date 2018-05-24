@@ -40,13 +40,13 @@
         <?php 
             session_start();
             if($_SESSION['result'] == 'guardado'){
-                echo '<script>alert("Guardado exitosamente!");</script>';
+                echo '<script>alert("Indice guardado exitosamente!");</script>';
             }
             if($_SESSION['result'] == 'editado'){
-                echo '<script>alert("Editado exitosamente!");</script>';
+                echo '<script>alert("Indice Editado exitosamente!");</script>';
             }
             if($_SESSION['result'] == 'eliminado'){
-                echo '<script>alert("Eliminado exitosamente!");</script>';
+                echo '<script>alert("Indice eliminado exitosamente!");</script>';
             }
             if($_SESSION['result'] == 'error'){
                 echo '<script>alert("Error, vuelva a intentarlo");</script>';

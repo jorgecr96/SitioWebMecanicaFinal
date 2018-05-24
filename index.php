@@ -53,11 +53,12 @@
         });
       });            
     </script>
-    <div id="navbar" class="navbar">
-      <script type="text/javascript">
-        $("#navbar").load("navbar.html");
-      </script> 
-    </div>  
+    <?php
+      $doc = new DOMDocument();
+      libxml_use_internal_errors(true);
+      $doc->loadHTMLFile("navbar.html");
+      echo $doc->saveHTML();
+    ?>  
     <div class="Cprincipal_index card-panel grey lighten-4">
       <div>
         <img class="responsive-img" src="Imagenes/head.png" alt="header pagina quienes somos" height="90px" width="3000px">

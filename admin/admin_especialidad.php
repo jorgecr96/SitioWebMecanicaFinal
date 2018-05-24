@@ -50,10 +50,10 @@
                 //echo "<nav><div class=\"nav-wrapper light-green accent-4\"><H2>Guardado exitosamente</H2></div></nav>";
             }
             if($_SESSION['result'] == 'editado'){
-                echo '<script>alert("Especialidad editado exitosamente!");</script>';
+                echo '<script>alert("Especialidad editada exitosamente!");</script>';
             }
             if($_SESSION['result'] == 'eliminado'){
-                echo '<script>alert("Especialidad eliminado exitosamente!");</script>';
+                echo '<script>alert("Especialidad eliminada exitosamente!");</script>';
             }
             if($_SESSION['result'] == 'error'){
                 echo '<script>alert("Error, vuelva a intentarlo más tarde!");</script>';

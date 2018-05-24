@@ -56,13 +56,13 @@
         ?>
         <?php 
             if($_SESSION['result'] == 'guardado'){
-                echo '<script>alert("Guardado exitosamente!");</script>';
+                echo '<script>alert("Materia guardada exitosamente!");</script>';
             }
             if($_SESSION['result'] == 'editado'){
-                echo '<script>alert("Editado exitosamente!");</script>';
+                echo '<script>alert("Materia editada exitosamente!");</script>';
             }
             if($_SESSION['result'] == 'eliminado'){
-                echo '<script>alert("Eliminado exitosamente!");</script>';
+                echo '<script>alert("Materia eliminada exitosamente!");</script>';
             }
             if($_SESSION['result'] == 'error'){
                 echo '<script>alert("Error, vuelva a intentarlo");</script>';

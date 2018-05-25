@@ -422,6 +422,7 @@ class DB{
         $sentencia->setFetchMode(PDO::FETCH_ASSOC);
         $resultado = $sentencia->fetchAll();
         return $resultado;
+    }
 
     public function eliminarInfraestructura($tituloInfra){
         $sql = "DELETE FROM infraestructura WHERE nombre=:nombre";

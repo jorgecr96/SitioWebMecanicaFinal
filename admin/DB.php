@@ -18,7 +18,7 @@ class DB{
     }
     
     public function ejecutar($sql){
-        echo $sql;
+        //echo $sql;
         if($this->conexion){
             return $this->conexion->query($sql)->fetchAll();
         }else{
@@ -412,7 +412,7 @@ class DB{
     }
 
     public function iniciarSesion($nombre, $pass){
-        $sql = "SELECT (nombre) FROM usuarios WHERE nombre=:nombre AND pass=:pass ";
+        $sql = "SELECT (nombre) FROM usuarios WHERE nombre=:nombre AND passw=:pass";
         $sentencia = $this->conexion->prepare($sql);  
         $sentencia->bindParam(":nombre", $nombre);
         $sentencia->bindParam(":pass", $pass);
@@ -442,7 +442,7 @@ class DB{
         return $resultado;
     }
     public function cambiarPass($nombre, $pass){
-        $sql = "UPDATE usuarios SET pass=:pass WHERE nombre=:nombre";
+        $sql = "UPDATE usuarios SET passw=:pass WHERE nombre=:nombre";
         $sentencia = $this->conexion->prepare($sql);  
         $sentencia->bindParam(":nombre", $nombre);
         $sentencia->bindParam(":pass", $pass);
@@ -451,6 +451,27 @@ class DB{
         $resultado = $sentencia->fetchAll();
         return $resultado;
     }
-        
+
+    public function insertarSitioInteres($nombre, $enlace, $archivo){
+        $sql = "INSERT INTO sitio_interes ( `nombre`, `enlace`, `imagen`) VALUES (:nombre, :enlace, :archivo)";
+        $sentencia = $this->conexion->prepare($sql);  
+        $sentencia->bindParam(":nombre", $nombre);
+        $sentencia->bindParam(":enlace", $enlace);
+        $sentencia->bindParam(":archivo", $archivo);
+        $sentencia->execute();
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $resultado = $sentencia->fetchAll();
+        return $resultado;
+    }
+
+    public function eliminarSitioInteres($nombre){
+        $sql = "DELETE FROM sitio_interes WHERE nombre=:nombre";
+        $sentencia = $this->conexion->prepare($sql);  
+        $sentencia->bindParam(":nombre", $nombre);
+        $sentencia->execute();
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $resultado = $sentencia->fetchAll();
+        return $resultado;
+    }   
 }
 

@@ -8,9 +8,6 @@ if(isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
     }
 
     extract($_POST);
-    if($_SESSION['user']!=""){
-        //echo "Bienvenido ".$_SESSION['user'];
-    }
 
     if(isset($user) && isset($password)){
         $conexion = new DB();

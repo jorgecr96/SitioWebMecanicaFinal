@@ -45,13 +45,13 @@
         <?php 
             #condiciones para veerificiar que las peticiones fueron aceptadas o rechazadas
             if($_SESSION['result'] == 'guardado'){
-                echo '<script>alert("Material guardado exitosamente!");</script>';
+                echo '<script>alert("Investigación guardada exitosamente!");</script>';
             }
             if($_SESSION['result'] == 'editadoMaterial'){
-                echo '<script>alert("Material editado exitosamente!");</script>';
+                echo '<script>alert("Investigación editada exitosamente!");</script>';
             }
             if($_SESSION['result'] == 'eliminadoMaterial'){
-                echo '<script>alert("Material eliminado exitosamente!");</script>';
+                echo '<script>alert("Investigación eliminada exitosamente!");</script>';
             }
             if($_SESSION['result'] == 'errorMaterial'){
                 echo '<script>alert("Error, vuelva a intentarlo más tarde!");</script>';
@@ -66,36 +66,28 @@
             <div class="row">
                 <div class="col s12">
                     <ul class="tabs">
-                        <li class="tab col s3"><a href="#alta" class="teal-text text-darken-2">AGREGAR MATERIAL</a></li>
-                        <li class="tab col s3"><a href="#modificar" class="teal-text text-darken-2">MODIFICAR MATERIAL</a></li>
-                        <li class="tab col s3"><a href="#baja" class="teal-text text-darken-2">ELIMINAR MATERIAL</a></li>
+                        <li class="tab col s3"><a href="#alta" class="teal-text text-darken-2">AGREGAR INVESTIGACIÓN</a></li>
+                        <li class="tab col s3"><a href="#modificar" class="teal-text text-darken-2">MODIFICAR INVESTIGACIÓN</a></li>
+                        <li class="tab col s3"><a href="#baja" class="teal-text text-darken-2">ELIMINAR INVESTIGACIÓN</a></li>
                     </ul>
                 </div>
                 <div id='alta' class="col s12">
-                    <h1>Agregar Material/Documento</h1>
+                    <h1>Agregar Investigación</h1>
                     <br />
-                    <form action="subirMaterial.php" method="post" enctype="multipart/form-data" id="agregarMaterialForm">
-                        <input type="text" name= "tituloMaterial" id="tituloMaterial" placeholder="Titulo del documento (para mostrar en pantalla)">
+                    <form action="subirInvestigacion.php" method="post" enctype="multipart/form-data" id="agregarInvestigacionForm">
+                        <input type="text" name= "tituloInvestigacion" id="tituloInvestigacion" placeholder="Titulo de la investigación (para mostrar en pantalla)">
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Elige el documento</span>
-                                <input type="file" accept="application/pdf, application/vnd.ms-excel, application/vnd.ms-word" name="archivoMaterial" id="archivoMaterial">
+                                <input type="file" accept="application/pdf, application/vnd.ms-excel, application/vnd.ms-word" name="archivoInvestigacion" id="archivoInvestigacion">
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text" placeholder="Nombre orginal del documento">
                             </div>
                         </div>
-                        <div class="input-field  ">
-                            <label>Sección</label><br>
-                            <select id="seccionMaterial" name="seccionMaterial">
-                                <option value="" disabled selected>Selecciona una sección</option>
-                                <option value="Documentos">Documentos</option>
-                                <option value="Normativos">Normativos</option>
-                                <option value="Reglamento">Reglamento</option>
-                                <option value="Materias">Materias</option>
-                                <option value="Ceneval">Ceneval</option>
-                                <option value="Tríptico">Tríptico</option>
-                            </select>
+                        <div class="input-field col s12">
+                            <textarea id="descripcionInvestigacion" name="descripcionInvestigacion" class="materialize-textarea"></textarea>
+                            <label for="descricionInvestigacion">Descripcion de la Investigación</label>
                         </div>
                         <br />
                         <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
@@ -104,49 +96,43 @@
                     </form>
                 </div>
                 <div id='modificar' class="col s12">
-                    <h1>Editar Material</h1>
+                    <h1>Editar Investigación</h1>
                     <br />
-                    <form action="editarMaterial.php" method="post" enctype="multipart/form-data" id="editarMaterialForm">
+                    <form action="editarInvestigacion.php" method="post" enctype="multipart/form-data" id="editarInvestigacionForm">
                         <div class="input-field col s12">
-                            <label>Documento</label><br>
-                            <select id="tituloMaterial" name="tituloMaterial">
+                            <label>Investigación</label><br>
+                            <select id="tituloInvestigacion" name="tituloInvestigacion">
                                 <option value="" disabled selected>Selecciona el documento a editar</option>
-                                <?php
-                                    //Conexion a la base de datos
-                                    require_once("DB.php");
-                                    $db = new DB();
-                                    $SQL = "SELECT nombre FROM material_apoyo";
-                                    $resultado = $db->ejecutar($SQL);
-                                    foreach($resultado as $fila){
-                                        $json= json_decode($fila[0]);
-                                ?>
-                                <option value="<?php echo $fila[0]; ?>"><?php echo $fila[0];  } ?></option>                                    
+                            <?php
+                                //Conexion a la base de datos
+                                require_once("DB.php");
+                                $db = new DB();
+                                $SQL = "SELECT titulo FROM investigaciones";
+                                $resultado = $db->ejecutar($SQL);
+                                foreach($resultado as $fila){
+                                    $json= json_decode($fila[0]);
+                            ?>
+                                <option value="<?php echo $fila[0]; ?>"><?php echo $fila[0];?></option>
+                            <?php
+                                }
+                            ?>
                             </select>
                         </div>   
                         <br />
-                         <label>Nuevo nombre del documento a mostrar</label>
-                        <input type="text" name= "tituloMaterialEditar" id="tituloMaterialEditar" placeholder="Titulo del documento (para mostrar en pantalla)">
-                        
+                        <label>Nuevo nombre de la investigación a mostrar</label>
+                        <input type="text" name= "tituloInvestigacionEditar" id="tituloInvestigacionEditar" placeholder="Titulo de la investigacion (para mostrar en pantalla)">
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Elige el nuevo documento</span>
-                                <input type="file" accept="application/pdf, application/vnd.ms-excel, application/vnd.ms-word" name="materialEditar" id="materialEditar">
+                                <input type="file" accept="application/pdf, application/vnd.ms-excel, application/vnd.ms-word" name="investigacionEditar" id="investigacionEditar">
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text" placeholder="Nombre del documento">
                             </div>
                         </div>
-                        <div class="input-field col s12 ">
-                            <label>Editar Sección</label><br>
-                            <select id="seccionMaterialEditar" name="seccionMaterialEditar">
-                                <option value="" disabled selected>Selecciona una sección</option>
-                                <option value="Documentos">Documentos</option>
-                                <option value="Normativos">Normativos</option>
-                                <option value="Reglamento">Reglamento</option>
-                                <option value="Materias">Materias</option>
-                                <option value="Ceneval">Ceneval</option>
-                                <option value="Tríptico">Tríptico</option>
-                            </select>
+                        <div class="input-field col s12">
+                            <textarea id="descripcionInvestigacionEditar" name="descripcionInvestigacionEditar" class="materialize-textarea"></textarea>
+                            <label for="descricionInvestigacionEditar">Descripcion de la Investigación</label>
                         </div>
                         <button class="btn waves-effect waves-light" type="submit" name="action">Editar
                             <i class="material-icons right">system_update_alt</i>
@@ -154,26 +140,27 @@
                     </form>
                 </div>
                 <div id='baja' class="col s12">
-                    <h1>Eliminar Material de Apoyo</h1>
-                    <form action="eliminar_material.php" method="post" enctype="multipart/form-data" id="eliminarMaterialForm">
+                    <h1>Eliminar Investigacion</h1>
+                    <form action="eliminar_investigacion.php" method="post" enctype="multipart/form-data" id="eliminarInvestigacionForm">
                         <div class="input-field col s12">
-                            <label>Eliminar</label><br>
-                            <select id="tituloMaterial" name="tituloMaterial">
-                                <option value="" disabled selected>Selecciona un documento</option>
-                                <?php
+                            <label>Investigación</label><br>
+                            <select id="tituloInvestigacion" name="tituloInvestigacion">
+                                <option value="" disabled selected>Selecciona una Investigación</option>
+                            <?php
                                 //Conexion a la base de datos
                                 require_once("DB.php");
                                 $db = new DB();
-                                $SQL = "SELECT nombre FROM material_apoyo";
+                                $SQL = "SELECT titulo FROM investigaciones";
                                 $resultado = $db->ejecutar($SQL);
                                 foreach($resultado as $fila){
                                     $json= json_decode($fila[0]);
-                                ?>
-                                    <option value="<?php echo $fila[0]; ?>"><?php echo $fila[0]; } ?></option>  
-                                    
+                            ?>
+                                <option value="<?php echo $fila[0]; ?>"><?php echo $fila[0];?></option>
+                            <?php
+                                }
+                            ?>
                             </select>
                         </div>
-                        
                         <button class="btn waves-effect waves-light" type="submit" name="action">Eliminar
                             <i class="material-icons right">delete_forever</i>
                         </button>

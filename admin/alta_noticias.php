@@ -1,21 +1,21 @@
 <?php 
-#inicio de sesión para variables de verificación 
+    #inicio de sesión para variables de verificación 
     session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>ITMORELIA| Dept. Metal-Mecánica</title>
-<meta charset="utf-8"/>
-        <meta name="keywords" content="pagina de Mecanica"/>
-        <meta name="author" content="Jorge Cervantes Ramirez"/>
-        <link rel="icon" type="image/ico" href="Imagenes/icotec.ico"/>      
-        <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
-        <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-        <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
-        <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="index.css" />
+        <title>ITMORELIA| Dept. Metal-Mec�nica</title>
+        <meta charset="utf-8"/>
+        <meta name="author" content="Carlos Villanueva Cervantes"/>
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1">  
+        <link rel="icon" type="image/ico" href="Imagenes/icotec.ico"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script type="text/javascript" src="/SitioWebMecanica/js/admin.js"/></script>
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="estilo.css" />
         <style type="text/css">
             body{
@@ -24,14 +24,15 @@
                 background-position: center center;
                 background-attachment: fixed;
            }
-        </style> 
+        </style>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script>
             $(document).ready(function() {
                 $('select').material_select();
                 $(".button-collapse").sideNav();
                 $('.tabs').tabs();
             });
-        </script>
+        </script>   
     </head>
     <body >
         <!--encabezado y menus-->
@@ -43,23 +44,25 @@
         ?>
         <?php 
             #condiciones para veerificiar que las peticiones fueron aceptadas o rechazadas
-            if($_SESSION['result'] == 'guardado'){
-                echo '<script>alert("Noticia guardada exitosamente!");</script>';
-                //echo "<nav><div class=\"nav-wrapper light-green accent-4\"><H2>Guardado exitosamente</H2></div></nav>";
+            if(isset($_SESSION['resutl'])){
+                if($_SESSION['result'] == 'guardado'){
+                    echo '<script>alert("Noticia guardada exitosamente!");</script>';
+                    //echo "<nav><div class=\"nav-wrapper light-green accent-4\"><H2>Guardado exitosamente</H2></div></nav>";
+                }
+                if($_SESSION['result'] == 'editado'){
+                    echo '<script>alert("Noticia editada exitosamente!");</script>';
+                }
+                if($_SESSION['result'] == 'eliminado'){
+                    echo '<script>alert("Noticia eliminada exitosamente!");</script>';
+                }
+                if($_SESSION['result'] == 'error'){
+                    echo '<script>alert("Error, vuelva a intentarlo más tarde!");</script>';
+                }
+                if($_SESSION['result'] == 'errorFoto'){
+                    echo '<script>alert("Error al cargar la foto, selecciona otra o vuelva a intentarlo más tarde!");</script>';
+                }
+                $_SESSION['result']= "";
             }
-            if($_SESSION['result'] == 'editado'){
-                echo '<script>alert("Noticia editada exitosamente!");</script>';
-            }
-            if($_SESSION['result'] == 'eliminado'){
-                echo '<script>alert("Noticia eliminada exitosamente!");</script>';
-            }
-            if($_SESSION['result'] == 'error'){
-                echo '<script>alert("Error, vuelva a intentarlo más tarde!");</script>';
-            }
-            if($_SESSION['result'] == 'errorFoto'){
-                echo '<script>alert("Error al cargar la foto, selecciona otra o vuelva a intentarlo más tarde!");</script>';
-            }
-            $_SESSION['result']= "";
         ?>
         <!-- SECCION PARA AGREGAR NOTICIAS-->
         <div class="Cprincipal_index card-panel grey lighten-4">
@@ -108,7 +111,7 @@
                                     $json= json_decode($fila[0]);
                                 ?>
                                     <option value="<?php echo $fila[0]?>"><?php echo $fila[0]?></option>  
-                                    <?php
+                                <?php
                                 }
                                 ?>
                             </select>
@@ -147,7 +150,7 @@
                                     $json= json_decode($fila[0]);
                                 ?>
                                     <option value="<?php echo $fila[0]?>"><?php echo $fila[0]?></option>  
-                                    <?php
+                                <?php
                                 }
                                 ?>
                             </select>

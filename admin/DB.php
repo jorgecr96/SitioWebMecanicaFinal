@@ -18,6 +18,7 @@ class DB{
     }
     
     public function ejecutar($sql){
+        echo $sql;
         if($this->conexion){
             return $this->conexion->query($sql)->fetchAll();
         }else{
@@ -380,6 +381,15 @@ class DB{
         $resultado = $sentencia->fetchAll();
         return $resultado;
     }
+    public function insertarInvestigacion($tituloInvestigacion, $ruta, $descripcionInvestigacion){
+        $sql = "INSERT INTO investigaciones(`titulo`, `archivo`, `descripcion`) VALUES('".$tituloInvestigacion."', '".$ruta."', '".$descripcionInvestigacion."')";
+        echo $sql;
+        $sentencia = $this->conexion->prepare($sql);
+        $sentencia->execute();
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $resultado = $sentencia->fetchAll();
+        return $resultado;
+    }
 
     public function eliminarInfraestructura($tituloInfra){
         $sql = "DELETE FROM infraestructura WHERE nombre=:nombre";
@@ -390,5 +400,39 @@ class DB{
         $resultado = $sentencia->fetchAll();
         return $resultado;
     }
+    public function editarInvestigacion($tituloInvestigacion,$tituloInvestigacionEditar,$archivo,$descripcionInvestigacionEditar){
+        $sql = "UPDATE investigaciones " .
+            "SET titulo = '" . $tituloInvestigacionEditar . "', " .
+            "archivo = '" . $archivo ."',".
+            " descripcion = '" . $descripcionInvestigacionEditar .
+            "' WHERE titulo = '" . $tituloInvestigacion . "'";
+            echo $sql;
+        if ($this->conexion->query($sql) === TRUE) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+    public function editarInvestigacionSinArchivo($tituloInvestigacion,$tituloInvestigacionEditar,$descripcionInvestigacionEditar){
+        $sql = "UPDATE investigaciones " .
+            "SET titulo = '" . $tituloInvestigacionEditar . "', " .
+            "descripcion = '" . $descripcionInvestigacionEditar .
+            "' WHERE titulo = '" . $tituloInvestigacion . "'";
+            echo $sql;
+        if ($this->conexion->query($sql) === TRUE) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+    public function eliminarInvestigacion($tituloInvestigacion){
+        $sql = "DELETE FROM investigaciones WHERE titulo='".$tituloInvestigacion."'";
+        $sentencia = $this->conexion->prepare($sql);        
+        $sentencia->execute();
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $resultado = $sentencia->fetchAll();
+        return $resultado;
+    }
+        
 }
 

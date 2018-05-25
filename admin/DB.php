@@ -18,7 +18,7 @@ class DB{
     }
     
     public function ejecutar($sql){
-        echo $sql;
+        //echo $sql;
         if($this->conexion){
             return $this->conexion->query($sql)->fetchAll();
         }else{
@@ -410,6 +410,69 @@ class DB{
         $resultado = $sentencia->fetchAll();
         return $resultado;
     }
+
+    public function iniciarSesion($nombre, $pass){
+        $sql = "SELECT (nombre) FROM usuarios WHERE nombre=:nombre AND passw=:pass";
+        $sentencia = $this->conexion->prepare($sql);  
+        $sentencia->bindParam(":nombre", $nombre);
+        $sentencia->bindParam(":pass", $pass);
+        $sentencia->execute();
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $resultado = $sentencia->fetchAll();
+        return $resultado;
+    }
+    public function crearUsuario($nombre, $pass){
+        $sql = "INSERT INTO usuarios VALUES (null, :nombre, :pass)";
+        $sentencia = $this->conexion->prepare($sql);  
+        $sentencia->bindParam(":nombre", $nombre);
+        $sentencia->bindParam(":pass", $pass);
+        $sentencia->execute();
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $resultado = $sentencia->fetchAll();
+        return $resultado;
+    }
+
+    public function eliminarUsuario($nombre){
+        $sql = "DELETE FROM usuarios WHERE nombre=:nombre";
+        $sentencia = $this->conexion->prepare($sql);  
+        $sentencia->bindParam(":nombre", $nombre);
+        $sentencia->execute();
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $resultado = $sentencia->fetchAll();
+        return $resultado;
+    }
+    public function cambiarPass($nombre, $pass){
+        $sql = "UPDATE usuarios SET passw=:pass WHERE nombre=:nombre";
+        $sentencia = $this->conexion->prepare($sql);  
+        $sentencia->bindParam(":nombre", $nombre);
+        $sentencia->bindParam(":pass", $pass);
+        $sentencia->execute();
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $resultado = $sentencia->fetchAll();
+        return $resultado;
+    }
+
+    public function insertarSitioInteres($nombre, $enlace, $archivo){
+        $sql = "INSERT INTO sitio_interes ( `nombre`, `enlace`, `imagen`) VALUES (:nombre, :enlace, :archivo)";
+        $sentencia = $this->conexion->prepare($sql);  
+        $sentencia->bindParam(":nombre", $nombre);
+        $sentencia->bindParam(":enlace", $enlace);
+        $sentencia->bindParam(":archivo", $archivo);
+        $sentencia->execute();
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $resultado = $sentencia->fetchAll();
+        return $resultado;
+    }
+
+    public function eliminarSitioInteres($nombre){
+        $sql = "DELETE FROM sitio_interes WHERE nombre=:nombre";
+        $sentencia = $this->conexion->prepare($sql);  
+        $sentencia->bindParam(":nombre", $nombre);
+        $sentencia->execute();
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $resultado = $sentencia->fetchAll();
+        return $resultado;
+    }   
         
 }
 

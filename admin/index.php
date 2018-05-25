@@ -103,29 +103,28 @@
     </div>
 
     <div class="row">
-      <div class="col s6 m6 l6">
-        <div class="card">
-          <div class="card-image">
-            <a href="http://www.conacytprensa.mx/"><img src="Pagina/images/logoAICgris.png"></a>
-            <span class="card-title">Card Title</span>
+
+      <?php
+        $conexion = new DB();
+        $resultado=$conexion->ejecutar("SELECT enlace, imagen FROM sitio_interes;");
+        foreach($resultado as $fila){ 
+          $admin = "admin/";
+          $img = $fila ['imagen']; 
+          ?>
+          <div class="col s6 m6 l6">
+          <div class="card">
+            <div class="card-image">
+              <a href="http://<?php echo $fila['enlace']; ?>"><img src="<?php echo $admin . $img ; ?>"></a>
+              <span class="card-title"></span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col s6 m6 l6">
-        <div class="card">
-          <div class="card-image">
-            <a href="http://cacei.org.mx/index.php"><img src="Pagina/images/cacei.png"></a>
-          </div>
-        </div>
-      </div>
-      <div class="col s6 m6 l6">
-        <div class="card">
-          <div class="card-image">
-          <a href="https://www.entrepreneur.com/es"><img src="Imagenes/entrepreneur-logo.png"></a>
-            <span class="card-title">Card Title</span>
-          </div>
-        </div>
-      </div>
+
+       <?php 
+          } 
+        ?>
+
+
     </div>
             
 

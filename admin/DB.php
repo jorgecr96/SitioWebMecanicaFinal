@@ -18,7 +18,6 @@ class DB{
     }
     
     public function ejecutar($sql){
-        echo $sql;
         if($this->conexion){
             return $this->conexion->query($sql)->fetchAll();
         }else{

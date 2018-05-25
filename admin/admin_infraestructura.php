@@ -74,7 +74,7 @@
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Imagen</span>
-                                <input type="file" accept="image/jpeg" name="archivoFoto" id="archivoFoto">
+                                <input type="file" accept="image/jpeg" name="infraFoto" id="infraFoto">
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text" placeholder="Imagen">

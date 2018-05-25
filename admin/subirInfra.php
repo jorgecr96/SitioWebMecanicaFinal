@@ -9,8 +9,9 @@ if(isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
     if($tituloInfra!=""){
         //agregar archivos al sitioWeb
         $targetfoto = "Infraestructura/";
-        $targetfoto = $targetfoto . basename( $_FILES['archivoFoto']['name']) ;
-        if(move_uploaded_file($_FILES['archivoFoto']['tmp_name'], $targetfoto)){
+        $targetfoto = $targetfoto . basename( $_FILES['infraFoto']['name']) ;
+        if(move_uploaded_file($_FILES['infraFoto']['tmp_name'], $targetfoto)){
+            //echo "ya subio";
         }
         else {
             $response_array['status'] = 'errorFoto';

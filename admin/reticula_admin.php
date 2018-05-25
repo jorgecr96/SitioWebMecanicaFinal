@@ -1,5 +1,11 @@
 <?php 
     session_start();
+    if($_SESSION['user']!=""){
+        //echo "Bienvenido ".$_SESSION['user'];
+    }
+    else{
+        header('Location: login.php');
+    }
     if(isset($_SESSION['result'])){
         if($_SESSION['result'] == 'guardado'){
             echo '<script>alert("Guardado exitosamente!");</script>';

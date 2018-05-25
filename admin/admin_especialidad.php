@@ -1,6 +1,12 @@
 <?php 
-            #inicio de sesión para variables de verificación 
-            session_start();
+    #inicio de sesión para variables de verificación 
+    session_start();
+    if($_SESSION['user']!=""){
+        //echo "Bienvenido ".$_SESSION['user'];
+    }
+    else{
+        header('Location: login.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es">

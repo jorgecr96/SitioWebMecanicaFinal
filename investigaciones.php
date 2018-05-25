@@ -75,7 +75,7 @@
                             <span class="card-title"><?php echo $titulo;?></span>
                             <p><?php echo $descripcion;?></p>
                         </div>
-                        <div class="card-action #b71c1c red darken-1">
+                        <div class="card-action #b71c1c red darken-1git">
                             <a href="admin/<?php echo $archivo;?>">Ver Más</a>
                         </div>
                     </div>

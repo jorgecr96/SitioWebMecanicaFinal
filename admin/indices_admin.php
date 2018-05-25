@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    if($_SESSION['user']!=""){
+        //echo "Bienvenido ".$_SESSION['user'];
+    }
+    else{
+        header('Location: login.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -38,7 +47,6 @@
             echo $doc->saveHTML();
         ?>
         <?php 
-            session_start();
             if($_SESSION['result'] == 'guardado'){
                 echo '<script>alert("Indice guardado exitosamente!");</script>';
             }

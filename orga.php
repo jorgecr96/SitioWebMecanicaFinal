@@ -206,7 +206,7 @@
                                         <?php
                                             require_once("BD.php");
                                             $db = new BD();
-                                            $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='Profesor'";
+                                            $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='Profesor' AND carrera='mecanica'";
                                             $resultado = $db->ejecutar($SQL);
                                             foreach($resultado as $fila){
                                         ?>

@@ -45,6 +45,25 @@
                 $('.tabs').tabs();
             });
         </script>
+        <script type="text/javascript">
+            function validar(e) {
+                tecla = (document.all) ? e.keyCode : e.which;
+                if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
+                if (tecla==44) return true; //Coma ( En este caso para diferenciar los decimales )
+                if (tecla==48) return true;
+                if (tecla==49) return true;
+                if (tecla==50) return true;
+                if (tecla==51) return true;
+                if (tecla==52) return true;
+                if (tecla==53) return true;
+                if (tecla==54) return true;
+                if (tecla==55) return true;
+                if (tecla==56) return true;
+                patron = /1/; //ver nota
+                te = String.fromCharCode(tecla);
+                return patron.test(te);
+            }
+        </script> 
     </head>
     <body>
         <!--ENCABEZADO Y MENU-->
@@ -83,7 +102,7 @@
                     <h1>Agregar Materia</h1>
                     <form action="subirMateria.php" method="post" enctype="multipart/form-data" id="agregarMateriaForm">
                         <input type="text" name= "nombremateria" id="nombremateria" placeholder="Nombre de la materia">
-                        <input type="number"  min="0" max="11" default="1" name= "creditosmateria" id="creditosmateria" placeholder="Creditos de la materia">
+                        <input type="number" onKeyPress="return validar(event)" min="0" max="11" default="1" name= "creditosmateria" id="creditosmateria" placeholder="Creditos de la materia">
                         <select id="tipomateria" name="tipomateria">
                             <?php
                                 require_once("DB.php");
@@ -99,7 +118,7 @@
                                 }
                             ?>
                         </select>
-                        <input type="number"  min="1" max="12" default="1" name= "semestremateria" id="semestremateria" placeholder="Semestre de la materia">
+                        <input type="number" onKeyPress="return validar(event)" min="1" max="12" default="1" name= "semestremateria" id="semestremateria" placeholder="Semestre de la materia">
                         <div class="input-field col s12">
                             <select id="carrera" name="carrera">
                                 <option value="Mecanica">Mecánica</option>
@@ -146,9 +165,9 @@
                             </select>
                             <label>Materias</label>
                         </div>
-                        <input type="number"  min="0" max="11" name= "creditosmateriaeditar" id="creditosmateriaeditar" placeholder="Creditos de la materia">
+                        <input type="number" onKeyPress="return validar(event)" min="0" max="11" name= "creditosmateriaeditar" id="creditosmateriaeditar" placeholder="Creditos de la materia">
                         <input type="text" name= "tipomateriaeditar" id="tipomateriaeditar" placeholder="Tipo de la materia">
-                        <input type="number"  min="1" max="12" name= "semestremateriaeditar" id="semestremateriaeditar" placeholder="Semestre de la materia">
+                        <input type="number" onKeyPress="return validar(event)" min="1" max="12" name= "semestremateriaeditar" id="semestremateriaeditar" placeholder="Semestre de la materia">
                         <div class="input-field col s12">
                             <select id="carreraeditar" name="carreraeditar">
                                 <option value="mecanica">Mec&aacutencia</option>

@@ -5,27 +5,30 @@
         $_POST[$indice] = htmlspecialchars($valor);
         }
         extract($_POST);
-        if($nombremateria!=""){
-            $targetfolder = "ProgramasMaterias/";
-            $targetfolder = $targetfolder . basename( $_FILES['archivo']['name']) ;
-            if(move_uploaded_file($_FILES['archivo']['tmp_name'], $targetfolder)) {
-                //echo "The file ". basename( $_FILES['archivo']['name']). " is uploaded";
-            } else {
-                //echo "Problem uploading file";
-            }
-            $archivo = $targetfolder;
-            $conexion = new DB();
-            $resultado = $conexion->insertarMateria($nombremateria, $creditosmateria, $tipomateria, $semestremateria, $carrera, $abreviacionmateria, $archivo);
-            session_start();
-            if($resultado>0){
-                header('Location: reticula_admin.php');
-                $_SESSION['result'] = 'guardado';
-            } else {
-                header('Location: reticula_admin.php');
-                $_SESSION['result'] = 'error';
+        if(isset($nombremateria)){
+            if($nombremateria!=""){
+                $targetfolder = "ProgramasMaterias/";
+                $targetfolder = $targetfolder . basename( $_FILES['archivo']['name']) ;
+                if(move_uploaded_file($_FILES['archivo']['tmp_name'], $targetfolder)) {
+                    //echo "The file ". basename( $_FILES['archivo']['name']). " is uploaded";
+                } else {
+                    //echo "Problem uploading file";
+                }
+                $archivo = $targetfolder;
+                $conexion = new DB();
+                $resultado = $conexion->insertarMateria($nombremateria, $creditosmateria, $tipomateria, $semestremateria, $carrera, $abreviacionmateria, $archivo);
+                session_start();
+                if($resultado>0){
+                    header('Location: reticula_admin.php');
+                    $_SESSION['result'] = 'guardado';
+                } else {
+                    header('Location: reticula_admin.php');
+                    $_SESSION['result'] = 'error';
+                }
             }
         }   
     } else {
-        echo "se genero un error";
+        header('Location: reticula_admin.php');
+        $_SESSION['result'] = 'error';
     }
 ?>

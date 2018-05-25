@@ -87,10 +87,11 @@
                         <input type="text" name= "nombremateria" id="nombremateria" placeholder="Nombre de la materia">
                         <input type="number"  min="0" max="11" default="1" name= "creditosmateria" id="creditosmateria" placeholder="Creditos de la materia">
                         <select id="tipomateria" name="tipomateria">
+                            <option value="tronco comun">Tronco Comun</option>
                             <?php
                                 require_once("DB.php");
                                 $db = new DB();
-                                $SQL = "SELECT Nombre FROM especialidad";
+                                $SQL = "SELECT Nombre,Carrera FROM especialidad";
                                 $resultado = $db->ejecutar($SQL);
                                 foreach($resultado as $fila){
                                     $json= json_decode($fila[0]);
@@ -106,7 +107,7 @@
                             <select id="carrera" name="carrera">
                                 <option value="mecanica">Mecánica</option>
                                 <option value="mecatronica">Mecatrónica</option>
-                                <option value="mecatronica">Materiales</option>
+                                <option value="materiales">Materiales</option>
                             </select>
                             <label>Carrera</label>
                         </div>
@@ -155,7 +156,7 @@
                             <select id="carreraeditar" name="carreraeditar">
                                 <option value="mecanica">Mecánica</option>
                                 <option value="mecatronica">Mecatrónica</option>
-                                <option value="mecatronica">Materiales</option>
+                                <option value="materiales">Materiales</option>
                             </select>
                             <label>Carrera</label>
                         </div>

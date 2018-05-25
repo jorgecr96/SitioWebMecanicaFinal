@@ -56,21 +56,6 @@
             $doc->loadHTMLFile("navbar.html");
             echo $doc->saveHTML();
         ?>
-        <?php 
-            if($_SESSION['result'] == 'guardado'){
-                echo '<script>alert("Materia guardada exitosamente!");</script>';
-            }
-            if($_SESSION['result'] == 'editado'){
-                echo '<script>alert("Materia editada exitosamente!");</script>';
-            }
-            if($_SESSION['result'] == 'eliminado'){
-                echo '<script>alert("Materia eliminada exitosamente!");</script>';
-            }
-            if($_SESSION['result'] == 'error'){
-                echo '<script>alert("Error, vuelva a intentarlo");</script>';
-            }
-            $_SESSION['result']= "";
-        ?>
         <div class="Cprincipal_index card-panel grey lighten-4">
             <div class="row">
                 <div class="col s12">

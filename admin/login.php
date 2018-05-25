@@ -1,31 +1,32 @@
-<!DOCTYPE html>
-<!-- Artesania y loza Mexicana -->
 <?php 
+session_start();
 require_once("DB.php");
 if(isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
 
-    foreach($_GET as $indice => $valor){
-        $_GET[$indice] = htmlspecialchars($valor);
+    foreach($_POST as $indice => $valor){
+        $_POST[$indice] = htmlspecialchars($valor);
     }
 
-    extract($_GET);
-    if(isset($usuarioLogIn) && isset($password)){
-      if($nombre!="" && $psw != ""){
+    extract($_POST);
+    if($_SESSION['user']!=""){
+        //echo "Bienvenido ".$_SESSION['user'];
+    }
+
+    if(isset($user) && isset($password)){
         $conexion = new DB();
-        $SQL = "SELECT id FROM usuarios WHERE nombre='".$usuarioLogIn."' AND password='".$password."';";
-        $resultado = $conexion->ejecutar($SQL);
-        if($resultado>0){
-            session_start();
-            $_SESSION['user'] = $resultado->id;
-            $_SESSION['validated'] = "ok";
+        $resultado = $conexion->iniciarSesion($user, $password);
+        if($resultado){   
+            $_SESSION['user'] = $user;
+            header('Location: reticula_admin.php');
         }
-        else{       
+        else{     
+          echo  '<script>alert("Usuario o contraseña incorrectos vuelva a intentarlo");</script>';
         }
     }
-    }
-    
 }
 ?>
+<!DOCTYPE html>
+<!-- Artesania y loza Mexicana -->
 <html lang="es">
     <head>
         <title>ITMORELIA| Dept. Metal-Mec�nica</title>
@@ -68,22 +69,17 @@ if(isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
       <a href="#" class="brand-logo center"><h5>Metal Mecánica</h5></a>
     </div>
 </nav>
-<<<<<<< HEAD
-
-  <div class="Cprincipal_index card-panel grey lighten-4" style="text-align:center; margin-top: 10%; margin-bottom: 10%; margin-left: 25%; margin-right: 25%;">
-=======
   <div class="Cprincipal_index card-panel grey lighten-4" style="text-align:center; margin-top: 10%; margin-bottom: 10%; margin-left: 25%; margin-right: 25%;">
     <h6>Administrador</h6>
->>>>>>> d0bfc56259d2f3f12ac176c3f133c9f33487a1c5
-    <form action="EliminarPersonal.php" method="post" enctype="multipart/form-data" class="datos_usuarios" id="logInForm">
+    <form action="login.php" method="post" enctype="multipart/form-data" class="datos_usuarios" id="logInForm">
     <div class="row">
       <div class="input-field col s12">
-        <input id="usuarioLogIn" type="text" class="validate">
-        <label for="e">Usuario</label>
+        <input id="user" name="user" type="text" class="validate">
+        <label for="name">Usuario</label>
       </div> 
       <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
+          <input id="password" type="password" name="password" class="validate">
           <label for="password">Contraseña</label>
         </div>
       </div> 
@@ -134,10 +130,5 @@ if(isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
             </div>
           </div>
         </footer>
-<<<<<<< HEAD
-
-
-=======
->>>>>>> d0bfc56259d2f3f12ac176c3f133c9f33487a1c5
     </body>
 </html> 

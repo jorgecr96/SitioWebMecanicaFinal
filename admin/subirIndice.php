@@ -3,7 +3,7 @@
     require_once("DB.php");
     if(isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
         foreach($_POST as $indice => $valor){
-        $_POST[$indice] = htmlspecialchars($valor);
+            $_POST[$indice] = htmlspecialchars($valor);
         }
         extract($_POST);
         if(isset($carrera)){
@@ -17,7 +17,7 @@
             } else {
                 //echo "Problem uploading file";
             }
-            $archivo = $targetfolder;
+            //$archivo = $targetfolder;
             $conexion = new DB();
             $resultado = $conexion->insertarIndice($carrera, $periodo, $fecha);
             if($resultado>0){

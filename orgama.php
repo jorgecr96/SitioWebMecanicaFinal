@@ -49,7 +49,7 @@
                                 <?php
                                     require_once("BD.php");
                                     $db = new BD();
-                                    $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='jefe_de_departamento' AND Carrera='mecatronica'";
+                                    $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='jefe_de_departamento' AND Carrera='materiales'";
                                     $resultado = $db->ejecutar($SQL);
                                     foreach($resultado as $fila){
                                 ?>
@@ -68,7 +68,7 @@
                                         <?php
                                             require_once("BD.php");
                                             $db = new BD();
-                                            $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='presidente_de_academia' AND Carrera='mecatronica'";
+                                            $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='presidente_de_academia' AND Carrera='materiales'";
                                             $resultado = $db->ejecutar($SQL);
                                             foreach($resultado as $fila){
                                         ?>
@@ -87,7 +87,7 @@
                                                 <?php
                                                     require_once("BD.php");
                                                     $db = new BD();
-                                                    $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='secretario_de_academia' AND Carrera='mecatronica'";
+                                                    $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='secretario_de_academia' AND Carrera='materiales'";
                                                     $resultado = $db->ejecutar($SQL);
                                                     foreach($resultado as $fila){
                                                 ?>
@@ -106,7 +106,7 @@
                                                 <?php
                                                     require_once("BD.php");
                                                     $db = new BD();
-                                                    $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='coordinador_de_carrera' AND Carrera='mecatronica'";
+                                                    $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='coordinador_de_carrera' AND Carrera='materiales'";
                                                     $resultado = $db->ejecutar($SQL);
                                                     foreach($resultado as $fila){
                                                 ?>
@@ -125,7 +125,7 @@
                                                 <?php
                                                     require_once("BD.php");
                                                     $db = new BD();
-                                                    $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='coordinador_de_programa_de-tutorias' AND Carrera='mecatronica'";
+                                                    $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='coordinador_de_programa_de-tutorias' AND Carrera='materiales'";
                                                     $resultado = $db->ejecutar($SQL);
                                                     foreach($resultado as $fila){
                                                 ?>
@@ -144,7 +144,7 @@
                                                 <?php
                                                     require_once("BD.php");
                                                     $db = new BD();
-                                                    $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='Jefe_de_proyecto_de_docencia' AND Carrera='mecatronica'";
+                                                    $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='Jefe_de_proyecto_de_docencia' AND Carrera='materiales'";
                                                     $resultado = $db->ejecutar($SQL);
                                                     foreach($resultado as $fila){
                                                 ?>
@@ -163,7 +163,7 @@
                                                 <?php
                                                     require_once("BD.php");
                                                     $db = new BD();
-                                                    $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='Jefe_de_proyecto_de_vinculacion' AND Carrera='mecatronica'";
+                                                    $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='Jefe_de_proyecto_de_vinculacion' AND Carrera='materiales'";
                                                     $resultado = $db->ejecutar($SQL);
                                                     foreach($resultado as $fila){
                                                 ?>
@@ -182,7 +182,7 @@
                                                 <?php
                                                     require_once("BD.php");
                                                     $db = new BD();
-                                                    $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='Jefe_de_proyecto_de_investigacion' AND Carrera='mecatronica'";
+                                                    $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='Jefe_de_proyecto_de_investigacion' AND Carrera='materiales'";
                                                     $resultado = $db->ejecutar($SQL);
                                                     foreach($resultado as $fila){
                                                 ?>
@@ -206,7 +206,7 @@
                                         <?php
                                             require_once("BD.php");
                                             $db = new BD();
-                                            $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='Profesor' AND Carrera='mecatronica'";
+                                            $SQL = "SELECT CV, foto, nombre FROM profesor WHERE Tipo ='Profesor' AND Carrera='materiales'";
                                             $resultado = $db->ejecutar($SQL);
                                             foreach($resultado as $fila){
                                         ?>

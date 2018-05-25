@@ -69,6 +69,7 @@
                             <select id="carrera" name="carrera">
                                 <option value="Mecanica">Mec&aacutencia</option>
                                 <option value="Mecatronica">Mecatr&oacutenica</option>
+                                <option value="Materiales">Materiales</option>
                             </select>
                             <label>Carrera</label>
                         </div>
@@ -143,7 +144,7 @@
                                 foreach($resultado as $fila){
                                     $json= json_decode($fila[0]);
                             ?>
-                                <option value="<?php echo $fila[1]."_".$fila[2]."_".$fila[3]; ?>"><?php echo $fila[1]."_".$fila[2]."_".$fila[3];?></option>
+                                <option value="<?php echo $fila[1]."_".$fila[2]."_".$fila[3]; ?>"><?php echo $fila[1]." ".$fila[2]." ".$fila[3];?></option>
                             <?php
                                 }
                             ?>                                    

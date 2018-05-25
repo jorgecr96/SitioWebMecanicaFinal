@@ -10,6 +10,7 @@
         <meta name="author" content="Carlos Villanueva Cervantes"/>
         <meta name = "viewport" content = "width = device-width, initial-scale = 1">  
         <link rel="icon" type="image/ico" href="Imagenes/icotec.ico"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -17,7 +18,6 @@
         <script type="text/javascript" src="/SitioWebMecanica/js/admin.js"/></script>
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="estilo.css" />
-
         <style type="text/css">
             body{
                 background: #dddddd;
@@ -26,7 +26,6 @@
                 background-attachment: fixed;
            }
         </style>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script>
             $(document).ready(function() {
                 $('select').material_select();

@@ -104,6 +104,7 @@
                             <select id="carrera" name="carrera">
                                 <option value="Mecanica">Mecánica</option>
                                 <option value="Mecatronica">Mecátronica</option>
+                                <option value="materiales">Materiales</option>
                             </select>
                             <label>Carrera</label>
                         </div>
@@ -152,6 +153,7 @@
                             <select id="carreraeditar" name="carreraeditar">
                                 <option value="mecanica">Mec&aacutencia</option>
                                 <option value="mecatronica">Mecatr&oacutenica</option>
+                                <option value="materiales">Materiales</option>
                             </select>
                             <label>Carrera</label>
                         </div>
@@ -196,6 +198,14 @@
                                 ?>
                             </select>
                             <label>Eliminar</label>
+                            <div class="input-field col s12">
+                            <select id="carreraeliminar" name="carreraeliminar">
+                                <option value="mecanica">Mec&aacutencia</option>
+                                <option value="mecatronica">Mecatr&oacutenica</option>
+                                <option value="materiales">Materiales</option>
+                            </select>
+                            <label>Carrera</label>
+                        </div>
                         </div>
                         <button class="btn waves-effect waves-light" type="submit" name="action">Eliminar
                             <i class="material-icons right">delete_forever</i>

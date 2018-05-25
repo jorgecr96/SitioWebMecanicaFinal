@@ -8,7 +8,7 @@
         //falta eliminar el archivo
         if($eliminarmateria!=""){
             $conexion = new DB();
-            $resultado = $conexion->eliminarMateria($eliminarmateria);
+            $resultado = $conexion->eliminarMateria($eliminarmateria,$carreraeliminar);
             session_start();
             if($resultado>0){
                 $_SESSION['result'] = 'eliminado';

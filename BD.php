@@ -6,7 +6,7 @@
                 //require_once("datos_conexion.php");
                 //echo var_dump($datos_conexion);
                 $usuario = 'root';
-                $pass = '123456789';
+                $pass = '12345678';
                 $this->conexion = new PDO('mysql:host=127.0.0.1;dbname=mecanica', $usuario, $pass);
                 //echo "Conexion exitosa";
             }catch(PDOException $e){

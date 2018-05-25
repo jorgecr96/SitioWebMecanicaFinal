@@ -9,8 +9,8 @@ class DB{
             //require_once("datos_conexion.php");
             //echo var_dump($datos_conexion);
             $usuario = 'root';
-                $pass = '';
-                $this->conexion = new PDO('mysql:host=127.0.0.1;dbname=mecanica;port=3307', $usuario, $pass);
+                $pass = '12345678';
+                $this->conexion = new PDO('mysql:host=127.0.0.1;dbname=mecanica;', $usuario, $pass);
                 //echo "Conexion exitosa";
         }catch(PDOException $e){
             die("Error al conectarse:". $e->getMessage());
@@ -142,7 +142,7 @@ class DB{
     }
 
     public function editarMateria($nombremateriaeditar, $creditosmateriaeditar, $tipomateriaeditar, $semestremateriaeditar, $carreraeditar, $abreviacionmateriaeditar, $archivoeditar){
-        $sql = "UPDATE materias SET creditos=:creditos, tipo=:tipo, semestre=:semestre, programa=:programa,  carrera=:carrera, abreviacion=:abreviacion WHERE materia=:materia";
+        $sql = "UPDATE materias SET creditos=:creditos, tipo=:tipo, semestre=:semestre, programa=:programa, abreviacion=:abreviacion WHERE materia=:materia AND carrera=:carrera";
         $sentencia = $this->conexion->prepare($sql);
         $sentencia->bindParam(":materia", $nombremateriaeditar);
         $sentencia->bindParam(":creditos", $creditosmateriaeditar);
@@ -157,10 +157,11 @@ class DB{
         return $resultado;
     }
 
-    public function eliminarMateria($nombremateria){
-        $sql = "DELETE FROM materias WHERE materia=:nombremateria";
+    public function eliminarMateria($nombremateria,$carreraeliminar){
+        $sql = "DELETE FROM materias WHERE materia=:nombremateria AND carrera=:carreraeliminar";
         $sentencia = $this->conexion->prepare($sql);
         $sentencia->bindParam(":nombremateria", $nombremateria);
+        $sentencia->bindParam(":carreraeliminar", $carreraeliminar);
         $sentencia->execute();
         $sentencia->setFetchMode(PDO::FETCH_ASSOC);
         $resultado = $sentencia->fetchAll();
@@ -362,6 +363,28 @@ class DB{
         $sentencia->bindParam(":carrera", $carrera);
         $sentencia->bindParam(":periodo", $periodo);
         $sentencia->bindParam(":fecha", $fecha);
+        $sentencia->execute();
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $resultado = $sentencia->fetchAll();
+        return $resultado;
+    }
+    //FUNCIONES PARA ADMINISTRAR INFRAESTRUCTURA
+    public function insertarInfraestructura($tituloInfra, $descripcion, $foto){
+        $sql = "INSERT INTO infraestructura VALUES(null, :nombre, :descripcion, :foto)";
+        $sentencia = $this->conexion->prepare($sql);
+        $sentencia->bindParam(":nombre", $tituloInfra);
+        $sentencia->bindParam(":descripcion", $descripcion);
+        $sentencia->bindParam(":foto", $foto);
+        $sentencia->execute();
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $resultado = $sentencia->fetchAll();
+        return $resultado;
+    }
+
+    public function eliminarInfraestructura($tituloInfra){
+        $sql = "DELETE FROM infraestructura WHERE nombre=:nombre";
+        $sentencia = $this->conexion->prepare($sql);
+        $sentencia->bindParam(":nombre", $tituloInfra);
         $sentencia->execute();
         $sentencia->setFetchMode(PDO::FETCH_ASSOC);
         $resultado = $sentencia->fetchAll();

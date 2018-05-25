@@ -90,8 +90,9 @@
                         </div>
                         <div class="input-field col s12">
                             <select id="carrera" name="carrera">
-                                <option value="mecanica">Mec&aacutencia</option>
-                                <option value="mecatronica">Mecatr&oacutenica</option>
+                                <option value="mecanica">Mecánica</option>
+                                <option value="mecatronica">Mecatrónica</option>
+                                <option value="mecatronica">Materiales</option>
                             </select>
                             <label>Carrera</label>
                         </div>
@@ -162,8 +163,9 @@
                         </div>
                         <div class="input-field col s12">
                             <select id="carreraeditar" name="carreraeditar">
-                                <option value="mecanica">Mec&aacutencia</option>
-                                <option value="mecatronica">Mecatr&oacutenica</option>
+                                <option value="mecanica">Mecánica</option>
+                                <option value="mecatronica">Mecatrónica</option>
+                                <option value="mecatronica">Materiales</option>
                             </select>
                             <label>Carrera</label>
                         </div>

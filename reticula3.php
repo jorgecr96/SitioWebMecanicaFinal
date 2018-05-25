@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $_SESSION['carrera']='Mecatronica';
+    $_SESSION['carrera']='Materiales';
 ?>
 <!DOCTYPE html>
 <!-- Artesania y loza Mexicana -->
@@ -57,7 +57,7 @@
                         <h5 class="center-align">Plan de Estudios</h5>
                     </div>
                     <div>
-                        <h5 class="center-align">Retícula para la carrera de Ingeniería Mecatrónica</h5>
+                        <h5 class="center-align">Retícula para la carrera de Ingeniería en Materiales</h5>
                     </div>
                 </div>
                 <div class="col s12 m12 hide-on-large-only">
@@ -65,7 +65,7 @@
                         <h5 class="center-align">Plan de Estudios</h5>
                     </div>
                     <div>
-                        <h5 class="center-align">Retícula para la carrera de Ingeniería Mecatrónica</h5>
+                        <h5 class="center-align">Retícula para la carrera de Ingeniería Materiales</h5>
                     </div>
                 </div>
             </div>

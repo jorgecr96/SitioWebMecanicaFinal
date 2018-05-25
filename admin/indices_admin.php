@@ -67,8 +67,9 @@
                     <form action="subirIndice.php" method="post" enctype="multipart/form-data" id="agregarIndiceForm">
                         <div class="input-field col s12">
                             <select id="carrera" name="carrera">
-                                <option value="Mecanica">Mec&aacutencia</option>
-                                <option value="Mecatronica">Mecatr&oacutenica</option>
+                                <option value="Mecanica">Mecánica</option>
+                                <option value="Mecatronica">Mecatrónica</option>
+                                <option value="Materiales">Materiales</option>
                             </select>
                             <label>Carrera</label>
                         </div>

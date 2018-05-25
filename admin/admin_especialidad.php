@@ -74,8 +74,9 @@
                         <input type="text" name= "nomesp" id="nomesp" placeholder="Nombre de especialidad">
                         <div class="input-field col s12">
                             <select id="carrera" name="carrera">
-                                <option value="mecanica">Mec&aacutencia</option>
-                                <option value="mecatronica">Mecatr&oacutenica</option>
+                                <option value="mecanica">Mecánica</option>
+                                <option value="mecatronica">Mecatrónica</option>
+                                <option value="materiales">Materiales</option>
                             </select>
                             <label>Carrera</label>
                         </div>

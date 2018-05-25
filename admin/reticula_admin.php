@@ -1,18 +1,20 @@
 <?php 
     session_start();
-    if($_SESSION['result'] == 'guardado'){
-        echo '<script>alert("Guardado exitosamente!");</script>';
+    if(isset($_SESSION['result'])){
+        if($_SESSION['result'] == 'guardado'){
+            echo '<script>alert("Guardado exitosamente!");</script>';
+        }
+        if($_SESSION['result'] == 'editado'){
+            echo '<script>alert("Editado exitosamente!");</script>';
+        }
+        if($_SESSION['result'] == 'eliminado'){
+            echo '<script>alert("Eliminado exitosamente!");</script>';
+        }
+        if($_SESSION['result'] == 'error'){
+            echo '<script>alert("Error, vuelva a intentarlo");</script>';
+        }
+        $_SESSION['result']= "";
     }
-    if($_SESSION['result'] == 'editado'){
-        echo '<script>alert("Editado exitosamente!");</script>';
-    }
-    if($_SESSION['result'] == 'eliminado'){
-        echo '<script>alert("Eliminado exitosamente!");</script>';
-    }
-    if($_SESSION['result'] == 'error'){
-        echo '<script>alert("Error, vuelva a intentarlo");</script>';
-    }
-    $_SESSION['result']= "";
 ?>
 <!DOCTYPE html>
 <!-- Artesania y loza Mexicana -->
@@ -102,8 +104,9 @@
                         <input type="number"  min="1" max="12" default="1" name= "semestremateria" id="semestremateria" placeholder="Semestre de la materia">
                         <div class="input-field col s12">
                             <select id="carrera" name="carrera">
-                                <option value="Mecanica">Mecánica</option>
-                                <option value="Mecatronica">Mecátronica</option>
+                                <option value="mecanica">Mecánica</option>
+                                <option value="mecatronica">Mecatrónica</option>
+                                <option value="mecatronica">Materiales</option>
                             </select>
                             <label>Carrera</label>
                         </div>
@@ -150,8 +153,9 @@
                         <input type="number"  min="1" max="12" name= "semestremateriaeditar" id="semestremateriaeditar" placeholder="Semestre de la materia">
                         <div class="input-field col s12">
                             <select id="carreraeditar" name="carreraeditar">
-                                <option value="mecanica">Mec&aacutencia</option>
-                                <option value="mecatronica">Mecatr&oacutenica</option>
+                                <option value="mecanica">Mecánica</option>
+                                <option value="mecatronica">Mecatrónica</option>
+                                <option value="mecatronica">Materiales</option>
                             </select>
                             <label>Carrera</label>
                         </div>

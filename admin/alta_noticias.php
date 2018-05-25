@@ -50,7 +50,7 @@
         ?>
         <?php 
             #condiciones para veerificiar que las peticiones fueron aceptadas o rechazadas
-            if(isset($_SESSION['resutl'])){
+            if(isset($_SESSION['result'])){
                 if($_SESSION['result'] == 'guardado'){
                     echo '<script>alert("Noticia guardada exitosamente!");</script>';
                     //echo "<nav><div class=\"nav-wrapper light-green accent-4\"><H2>Guardado exitosamente</H2></div></nav>";

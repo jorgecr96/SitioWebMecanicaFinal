@@ -474,5 +474,27 @@ class DB{
         return $resultado;
     }   
         
+    //FUNCIONES PARA ADMINISTRAR INFRAESTRUCTURA
+    public function insertarInfraestructura($tituloInfra, $descripcion, $foto){
+        $sql = "INSERT INTO infraestructura VALUES(null, :nombre, :descripcion, :foto)";
+        $sentencia = $this->conexion->prepare($sql);
+        $sentencia->bindParam(":nombre", $tituloInfra);
+        $sentencia->bindParam(":descripcion", $descripcion);
+        $sentencia->bindParam(":foto", $foto);
+        $sentencia->execute();
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $resultado = $sentencia->fetchAll();
+        return $resultado;
+    }
+
+    public function eliminarInfraestructura($tituloInfra){
+        $sql = "DELETE FROM infraestructura WHERE nombre=:nombre";
+        $sentencia = $this->conexion->prepare($sql);
+        $sentencia->bindParam(":nombre", $tituloInfra);
+        $sentencia->execute();
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $resultado = $sentencia->fetchAll();
+        return $resultado;
+    }
 }
 

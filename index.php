@@ -9,7 +9,6 @@
     <link rel="icon" type="image/ico" href="Imagenes/icotec.ico"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style type="text/css">
       body{
@@ -39,7 +38,6 @@
         $(".dropdown-button").dropdown();
         $('.materialboxed').materialbox();
         $(".button-collapse").sideNav();
-        $('select').material_select();
         $('.carousel.carousel-slider').carousel({fullWidth: false});
         $('.slider').slider({fullWidth: false});     
         function autoplay() {

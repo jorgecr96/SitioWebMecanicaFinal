@@ -17,7 +17,6 @@
         <script type="text/javascript" src="/SitioWebMecanica/js/admin.js"/></script>
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="estilo.css" />
-
         <style type="text/css">
             body{
                 background: #dddddd;

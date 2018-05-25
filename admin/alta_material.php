@@ -5,17 +5,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>ITMORELIA| Dept. Metal-Mecánica</title>
-<meta charset="utf-8"/>
-        <meta name="keywords" content="pagina de Mecanica"/>
-        <meta name="author" content="Jorge Cervantes Ramirez/Yael Revuelta"/>
-        <link rel="icon" type="image/ico" href="Imagenes/icotec.ico"/>      
-        <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
-        <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-        <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
-        <script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="index.css" />
+        <title>ITMORELIA| Dept. Metal-Mec�nica</title>
+        <meta charset="utf-8"/>
+        <meta name="author" content="Carlos Villanueva Cervantes"/>
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1">  
+        <link rel="icon" type="image/ico" href="Imagenes/icotec.ico"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script type="text/javascript" src="/SitioWebMecanica/js/admin.js"/></script>
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="estilo.css" />
         <style type="text/css">
             body{
@@ -24,14 +24,15 @@
                 background-position: center center;
                 background-attachment: fixed;
            }
-        </style> 
+        </style>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script>
             $(document).ready(function() {
                 $('select').material_select();
                 $(".button-collapse").sideNav();
                 $('.tabs').tabs();
             });
-        </script>
+        </script>   
     </head>
     <body >
         <!--encabezado y menus-->

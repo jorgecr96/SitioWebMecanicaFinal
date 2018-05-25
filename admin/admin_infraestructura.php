@@ -62,18 +62,18 @@
                 <div class="col s12">
                     <ul class="tabs">
                         <li class="tab col s3"><a href="#alta" class="teal-text text-darken-2">AGREGAR IMAGEN</a></li>
-                        <li class="tab col s3"><a href="#baja" class="teal-text text-darken-2">BAJA IMAGEN</a></li>
+                        <li class="tab col s3"><a href="#baja" class="teal-text text-darken-2">ELIMINAR IMAGEN</a></li>
                     </ul>
                 </div>
                  <!-- SECCION PARA AGREGAR FOTOS-->
                 <div id='alta' class="col s12">
-                    <h1>Agregar Foto</h1>
+                    <h1>Agregar Imagen</h1>
                     <form action="subirInfra.php" method="post" enctype="multipart/form-data" id="agregarInfraForm">
                         <input type="text" name= "tituloInfra" id="tituloInfra" placeholder="Titulo de la imagen">
                         <input type="text" name= "descripcion" id="descripcion" placeholder="Descripción de la imagen">
                         <div class="file-field input-field">
                             <div class="btn">
-                                <span>Foto</span>
+                                <span>Imagen</span>
                                 <input type="file" accept="image/jpeg" name="archivoFoto" id="archivoFoto">
                             </div>
                             <div class="file-path-wrapper">
@@ -87,12 +87,12 @@
                 </div>
                  <!-- SECCION PARA ELIMINAR FOTOS-->
                 <div id='baja' class="col s12">
-                    <h1>Eliminar Foto</h1>
+                    <h1>Eliminar Imagen</h1>
                     <form action="eliminarInfra.php" method="post" enctype="multipart/form-data" id="eliminarInfraForm">
                         <div class="input-field col s12">
                             <label>Eliminar</label><br>
                             <select id="tituloInfra" name="tituloInfra">
-                                <option value="" disabled selected>Selecciona una foto</option>
+                                <option value="" disabled selected>Selecciona una Imagen</option>
                                 <?php
                                 //Conexion a la base de datos
                                 require_once("DB.php");

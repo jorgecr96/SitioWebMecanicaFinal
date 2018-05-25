@@ -9,8 +9,8 @@ class DB{
             //require_once("datos_conexion.php");
             //echo var_dump($datos_conexion);
             $usuario = 'root';
-                $pass = '';
-                $this->conexion = new PDO('mysql:host=127.0.0.1;dbname=mecanica;port=3307', $usuario, $pass);
+                $pass = '12345678';
+                $this->conexion = new PDO('mysql:host=127.0.0.1;dbname=mecanica', $usuario, $pass);
                 //echo "Conexion exitosa";
         }catch(PDOException $e){
             die("Error al conectarse:". $e->getMessage());
@@ -405,6 +405,47 @@ class DB{
     public function eliminarInvestigacion($tituloInvestigacion){
         $sql = "DELETE FROM investigaciones WHERE titulo='".$tituloInvestigacion."'";
         $sentencia = $this->conexion->prepare($sql);        
+        $sentencia->execute();
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $resultado = $sentencia->fetchAll();
+        return $resultado;
+    }
+
+    public function iniciarSesion($nombre, $pass){
+        $sql = "SELECT (nombre) FROM usuarios WHERE nombre=:nombre AND pass=:pass ";
+        $sentencia = $this->conexion->prepare($sql);  
+        $sentencia->bindParam(":nombre", $nombre);
+        $sentencia->bindParam(":pass", $pass);
+        $sentencia->execute();
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $resultado = $sentencia->fetchAll();
+        return $resultado;
+    }
+    public function crearUsuario($nombre, $pass){
+        $sql = "INSERT INTO usuarios VALUES (null, :nombre, :pass)";
+        $sentencia = $this->conexion->prepare($sql);  
+        $sentencia->bindParam(":nombre", $nombre);
+        $sentencia->bindParam(":pass", $pass);
+        $sentencia->execute();
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $resultado = $sentencia->fetchAll();
+        return $resultado;
+    }
+
+    public function eliminarUsuario($nombre){
+        $sql = "DELETE FROM usuarios WHERE nombre=:nombre";
+        $sentencia = $this->conexion->prepare($sql);  
+        $sentencia->bindParam(":nombre", $nombre);
+        $sentencia->execute();
+        $sentencia->setFetchMode(PDO::FETCH_ASSOC);
+        $resultado = $sentencia->fetchAll();
+        return $resultado;
+    }
+    public function cambiarPass($nombre, $pass){
+        $sql = "UPDATE usuarios SET pass=:pass WHERE nombre=:nombre";
+        $sentencia = $this->conexion->prepare($sql);  
+        $sentencia->bindParam(":nombre", $nombre);
+        $sentencia->bindParam(":pass", $pass);
         $sentencia->execute();
         $sentencia->setFetchMode(PDO::FETCH_ASSOC);
         $resultado = $sentencia->fetchAll();

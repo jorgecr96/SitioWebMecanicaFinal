@@ -94,7 +94,7 @@
       <div class="row">
       <?php
         $conexion = new DB();
-        $resultado=$conexion->ejecutar("SELECT enlace, imagen FROM sitio_interes;");
+        $resultado=$conexion->ejecutar("SELECT enlace, imagen FROM sitio_interes");
         foreach($resultado as $fila){ 
           $admin = "admin/";
           $img = $fila ['imagen']; 

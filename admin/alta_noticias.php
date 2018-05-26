@@ -1,6 +1,12 @@
 <?php 
     #inicio de sesión para variables de verificación 
     session_start();
+    if($_SESSION['user']!=""){
+        //echo "Bienvenido ".$_SESSION['user'];
+    }
+    else{
+        header('Location: login.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -43,6 +49,7 @@
             $doc->loadHTMLFile("navbar.html");
             echo $doc->saveHTML();
         ?>
+<<<<<<< HEAD
                 <?php
     if(isset($_SESSION['result'])){
         if($_SESSION['result'] == 'guardado'){
@@ -59,6 +66,29 @@
             echo '<script>swal("ERROR","Error, vuelva a intentarlo más tarde!","error");</script>';
         }
     $_SESSION['result']= "";}
+=======
+        <?php 
+            #condiciones para veerificiar que las peticiones fueron aceptadas o rechazadas
+            if(isset($_SESSION['result'])){
+                if($_SESSION['result'] == 'guardado'){
+                    echo '<script>alert("Noticia guardada exitosamente!");</script>';
+                    //echo "<nav><div class=\"nav-wrapper light-green accent-4\"><H2>Guardado exitosamente</H2></div></nav>";
+                }
+                if($_SESSION['result'] == 'editado'){
+                    echo '<script>alert("Noticia editada exitosamente!");</script>';
+                }
+                if($_SESSION['result'] == 'eliminado'){
+                    echo '<script>alert("Noticia eliminada exitosamente!");</script>';
+                }
+                if($_SESSION['result'] == 'error'){
+                    echo '<script>alert("Error, vuelva a intentarlo más tarde!");</script>';
+                }
+                if($_SESSION['result'] == 'errorFoto'){
+                    echo '<script>alert("Error al cargar la foto, selecciona otra o vuelva a intentarlo más tarde!");</script>';
+                }
+                $_SESSION['result']= "";
+            }
+>>>>>>> ff9d690d41dd7554e21525dc5fb96107db569d6f
         ?>
         <!-- SECCION PARA AGREGAR NOTICIAS-->
         <div class="Cprincipal_index card-panel grey lighten-4">

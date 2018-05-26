@@ -1,20 +1,5 @@
 <?php 
     session_start();
-    if(isset($_SESSION['result'])){
-        if($_SESSION['result'] == 'guardado'){
-            echo '<script>alert("Guardado exitosamente!");</script>';
-        }
-        if($_SESSION['result'] == 'editado'){
-            echo '<script>alert("Editado exitosamente!");</script>';
-        }
-        if($_SESSION['result'] == 'eliminado'){
-            echo '<script>alert("Eliminado exitosamente!");</script>';
-        }
-        if($_SESSION['result'] == 'error'){
-            echo '<script>alert("Error, vuelva a intentarlo");</script>';
-        }
-        $_SESSION['result']= "";
-    }
 ?>
 <!DOCTYPE html>
 <!-- Artesania y loza Mexicana -->
@@ -28,6 +13,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
         <script type="text/javascript" src="/SitioWebMecanica/js/admin.js"/></script>
         <link rel="stylesheet" type="text/css" href="css/index.css" />
@@ -55,6 +41,23 @@
             libxml_use_internal_errors(true);
             $doc->loadHTMLFile("navbar.html");
             echo $doc->saveHTML();
+        ?>
+                <?php
+    if(isset($_SESSION['result'])){
+        if($_SESSION['result'] == 'guardado'){
+            echo '<script>swal("GUARDADO", "Materia guardado exitosamente!", "success");</script>';
+            //echo "<nav><div class=\"nav-wrapper light-green accent-4\"><H2>Guardado exitosamente</H2></div></nav>";
+        }
+        if($_SESSION['result'] == 'editado'){
+            echo '<script>swal("EDITADO", "Materia editado exitosamente!","success");</script>';
+        }
+        if($_SESSION['result'] == 'eliminado'){
+            echo '<script>swal("ELIMINADO","Materia eliminado exitosamente!","success");</script>';
+        }
+        if($_SESSION['result'] == 'error'){
+            echo '<script>swal("ERROR","Error, vuelva a intentarlo más tarde!","error");</script>';
+        }
+    $_SESSION['result']= "";}
         ?>
         <div class="Cprincipal_index card-panel grey lighten-4">
             <div class="row">
@@ -165,7 +168,7 @@
                 <!-- SECCION PARA ELIMINAR LAS MATERIAS -->
                 <div id="eliminar" class = "col s12">
                     <h1>Eliminar Materias</h1>
-                    <form action="eliminarMateria.php" method="post" enctype="multipart/form-data" id="eliminarMateriaForm">
+                    <form action="eliminarMateria.php" method="post"  id="eliminarMateriaForm">
                         <div class="input-field col s12">
                             <select id="eliminarmateria" name="eliminarmateria">
                                 <option value="x" disabled selected>Elija una materia</option>

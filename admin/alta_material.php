@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
         <script type="text/javascript" src="/SitioWebMecanica/js/admin.js"/></script>
         <link rel="stylesheet" type="text/css" href="css/index.css" />
@@ -42,24 +43,22 @@
             $doc->loadHTMLFile("navbar.html");
             echo $doc->saveHTML();
         ?>
-        <?php 
-            #condiciones para veerificiar que las peticiones fueron aceptadas o rechazadas
-            if($_SESSION['result'] == 'guardado'){
-                echo '<script>alert("Material guardado exitosamente!");</script>';
-            }
-            if($_SESSION['result'] == 'editadoMaterial'){
-                echo '<script>alert("Material editado exitosamente!");</script>';
-            }
-            if($_SESSION['result'] == 'eliminadoMaterial'){
-                echo '<script>alert("Material eliminado exitosamente!");</script>';
-            }
-            if($_SESSION['result'] == 'errorMaterial'){
-                echo '<script>alert("Error, vuelva a intentarlo más tarde!");</script>';
-            }
-            if($_SESSION['result'] == 'errorDoc'){
-                echo '<script>alert("Error al cargar el documento, selecciona otro o vuelva a intentarlo más tarde!");</script>';
-            }
-            $_SESSION['result']= "";
+                <?php
+    if(isset($_SESSION['result'])){
+        if($_SESSION['result'] == 'guardado'){
+            echo '<script>swal("GUARDADO", "Materia guardado exitosamente!", "success");</script>';
+            //echo "<nav><div class=\"nav-wrapper light-green accent-4\"><H2>Guardado exitosamente</H2></div></nav>";
+        }
+        if($_SESSION['result'] == 'editado'){
+            echo '<script>swal("EDITADO", "Materia editado exitosamente!","success");</script>';
+        }
+        if($_SESSION['result'] == 'eliminado'){
+            echo '<script>swal("ELIMINADO","Materia eliminado exitosamente!","success");</script>';
+        }
+        if($_SESSION['result'] == 'error'){
+            echo '<script>swal("ERROR","Error, vuelva a intentarlo más tarde!","error");</script>';
+        }
+    $_SESSION['result']= "";}
         ?>
         <!-- SECCION PARA AGREGAR MTERIAL DE APOYO-->
         <div class="Cprincipal_index card-panel grey lighten-4">

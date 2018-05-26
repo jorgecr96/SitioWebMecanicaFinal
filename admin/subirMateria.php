@@ -1,9 +1,11 @@
 <?php
+    session_start();
     require_once("DB.php");
     if(isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
         foreach($_POST as $indice => $valor){
         $_POST[$indice] = htmlspecialchars($valor);
         }
+
         extract($_POST);
         if(isset($nombremateria)){
             if($nombremateria!=""){
@@ -17,13 +19,12 @@
                 $archivo = $targetfolder;
                 $conexion = new DB();
                 $resultado = $conexion->insertarMateria($nombremateria, $creditosmateria, $tipomateria, $semestremateria, $carrera, $abreviacionmateria, $archivo);
-                session_start();
                 if($resultado>0){
-                    header('Location: reticula_admin.php');
                     $_SESSION['result'] = 'guardado';
-                } else {
                     header('Location: reticula_admin.php');
+                } else {
                     $_SESSION['result'] = 'error';
+                    header('Location: reticula_admin.php');
                 }
             }
         }   

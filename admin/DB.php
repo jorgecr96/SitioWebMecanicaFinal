@@ -9,8 +9,8 @@ class DB{
             //require_once("datos_conexion.php");
             //echo var_dump($datos_conexion);
             $usuario = 'root';
-                $pass = '';
-                $this->conexion = new PDO('mysql:host=127.0.0.1;dbname=mecanica;port=3307', $usuario, $pass);
+                $pass = '12345678';
+                $this->conexion = new PDO('mysql:host=127.0.0.1;dbname=mecanica', $usuario, $pass);
                 //echo "Conexion exitosa";
         }catch(PDOException $e){
             die("Error al conectarse:". $e->getMessage());
@@ -326,7 +326,7 @@ class DB{
             " nombre = '" . $tituloMaterialEditar ."'," .
             " ruta = '" . $ruta .
             "' WHERE nombre = '" . $tituloMaterial . "'";
-        echo $sql;
+        //echo $sql;
         if ($this->conexion->query($sql) === TRUE) {
             return 0;
         } else {
@@ -339,7 +339,7 @@ class DB{
             "SET seccion = '" . $seccionMaterialEditar . "', " .
             "nombre = '" . $tituloMaterialEditar .
             "' WHERE nombre = '" . $tituloMaterial . "'";
-            echo $sql;
+            //echo $sql;
         if ($this->conexion->query($sql) === TRUE) {
             return 0;
         } else {
@@ -370,7 +370,7 @@ class DB{
     }
     public function insertarInvestigacion($tituloInvestigacion, $ruta, $descripcionInvestigacion){
         $sql = "INSERT INTO investigaciones(`titulo`, `archivo`, `descripcion`) VALUES('".$tituloInvestigacion."', '".$ruta."', '".$descripcionInvestigacion."')";
-        echo $sql;
+        //echo $sql;
         $sentencia = $this->conexion->prepare($sql);
         $sentencia->execute();
         $sentencia->setFetchMode(PDO::FETCH_ASSOC);
@@ -383,7 +383,7 @@ class DB{
             "archivo = '" . $archivo ."',".
             " descripcion = '" . $descripcionInvestigacionEditar .
             "' WHERE titulo = '" . $tituloInvestigacion . "'";
-            echo $sql;
+            //echo $sql;
         if ($this->conexion->query($sql) === TRUE) {
             return 0;
         } else {
@@ -395,7 +395,7 @@ class DB{
             "SET titulo = '" . $tituloInvestigacionEditar . "', " .
             "descripcion = '" . $descripcionInvestigacionEditar .
             "' WHERE titulo = '" . $tituloInvestigacion . "'";
-            echo $sql;
+            //echo $sql;
         if ($this->conexion->query($sql) === TRUE) {
             return 0;
         } else {
@@ -453,7 +453,7 @@ class DB{
     }
 
     public function insertarSitioInteres($nombre, $enlace, $archivo){
-        $sql = "INSERT INTO sitio_interes ( `nombre`, `enlace`, `imagen`) VALUES (:nombre, :enlace, :archivo)";
+        $sql = "INSERT INTO sitio_interes VALUES (1 , :nombre , :enlace , :archivo)";
         $sentencia = $this->conexion->prepare($sql);  
         $sentencia->bindParam(":nombre", $nombre);
         $sentencia->bindParam(":enlace", $enlace);

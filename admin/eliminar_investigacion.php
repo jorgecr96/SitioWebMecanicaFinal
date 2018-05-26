@@ -9,21 +9,23 @@ if(isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
     //falta eliminar el archivo
     if($tituloInvestigacion!=""){
         $conexion = new DB();
-        $resultado = $conexion->eliminarInvestigacion($tituloInvestigacion);
-        if($resultado>0){
+        $ruta ="";
+        $doc = $conexion->ejecutar("SELECT archivo FROM investigaciones WHERE titulo='".$tituloInvestigacion."'");
+        
             $ruta ="";
-            $doc = $conexion->ejecutar("SELECT archivo FROM investigaciones WHERE titulo='".$tituloInvestigacion."'");
             foreach($doc as $fila){
                 $ruta = $fila[0];
             }
             unlink($ruta);
-            $ruta="";
+            $resultado = $conexion->eliminarInvestigacion($tituloInvestigacion);
+            if($resultado>0){
+            
             $_SESSION['result'] = 'eliminadoMaterial';
-            header('Location: adminInvesigacion.php');
+            header('Location: adminInvestigacion.php');
         }
         else{
             $_SESSION['result'] = 'errorMaterial';
-            header('Location: adminInvesigacion.php');
+            header('Location: adminInvestigacion.php');
         }
     }   
 }

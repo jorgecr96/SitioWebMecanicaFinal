@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("DB.php");
 header('Content-type: application/json');
 if(isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
@@ -23,17 +24,13 @@ if(isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
         $foto = $targetfoto;
         $conexion = new DB();
         $resultado = $conexion->insertarInfraestructura($tituloInfra, $descripcion, $foto);
-        session_start();
+        
         //$_SESSION['result'] = 'guardado';
         if($resultado>0){
-            $response_array['status'] = 'success';
-            echo json_encode($response_array);
             $_SESSION['result']='guardado';
             header('Location: admin_infraestructura.php');
         }
         else{
-            $response_array['status'] = 'errorConsulta';
-            echo json_encode($response_array);
             $_SESSION['result']='error';
             header('Location: admin_infraestructura.php');
             exit;

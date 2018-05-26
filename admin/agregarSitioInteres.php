@@ -22,9 +22,11 @@ if(isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
                             $_SESSION['result']='error';
                             header('Location: adminSitiosInteres.php'); 
                         }  
+                        
+
                     $archivo = $targetfoto;
                     $conexion = new DB();
-                    $resultado = $conexion->insertarSitioInteres($nombresitio, $enlace, $archivo);
+                    $resultado = $conexion->insertarSitioInteres($nombresitio, $enlace, $targetfoto);
                     //$_SESSION['result'] = 'guardado';
                     if($resultado>0){
                         $_SESSION['result']='guardado';

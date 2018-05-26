@@ -10,7 +10,7 @@ if(isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
     if($tituloMaterial!=""){
         $conexion = new DB();
         $ruta ="";
-        $doc = $conexion->ejecutar("SELECT nombre FROM material_apoyo WHERE nombre='".$tituloMaterial."'");
+        $doc = $conexion->ejecutar("SELECT ruta FROM material_apoyo WHERE nombre='".$tituloMaterial."'");
         foreach($doc as $fila){
             $ruta = $fila[0];
         }

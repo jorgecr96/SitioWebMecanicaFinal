@@ -211,9 +211,19 @@ INSERT INTO `profesor` (`id_profesor`, `Nombre`, `Tipo`, `Carrera`, `CV`, `foto`
 CREATE TABLE `usuarios` (
   `id_usuario` int(4) NOT NULL,
   `nombre` varchar(30) NOT NULL,
-  `password` varchar(20) NOT NULL
+  `passw` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+-- Estructura de tabla para la tabla `Sitios de Interes`
+--
+
+CREATE TABLE `sitio_interes` (
+  `id_sitio` int(4) NOT NULL,
+  `nombre` varchar(200) NOT NULL,
+  `enlace` varchar(200) NOT NULL,
+  `imagen` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 --
 -- Índices para tablas volcadas
 --

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("DB.php");
 header('Content-type: application/json');
 if(isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
@@ -15,29 +16,21 @@ if(isset($_POST) and $_SERVER["REQUEST_METHOD"]=="POST"){
                 //echo "The file ". basename( $_FILES['archivo']['name']). " is uploaded";
             }
             else {
-                $response_array['status'] = 'errorMaterial';
-                echo json_encode($response_array);
                 $_SESSION['result']='errorDoc';
                 header('Location: adminInvestigacion.php');
-                exit;
             }
             $ruta = $targetdoc;
             $conexion = new DB();
             $resultado = $conexion->insertarInvestigacion($tituloInvestigacion, $ruta, $descripcionInvestigacion);
-            session_start();
+            
             //$_SESSION['result'] = 'guardado';
             if($resultado>0){
-                $response_array['status'] = 'success';
-                echo json_encode($response_array);
                 $_SESSION['result']='guardado';
                 header('Location: adminInvestigacion.php');
             }
             else{
-                $response_array['status'] = 'errorConsulta';
-                echo json_encode($response_array);
                 $_SESSION['result']='errorInvestigacion';
                 header('Location: adminInvestigacion.php');
-                exit;
             }  
         }
 
